@@ -1,7 +1,7 @@
 # CookAlong
 Master the art of cooking with your hands-free, digital sous chef who guides you through recipes by voice command.
 
-## Minimum Viable Product
+## Minimum Viable Product (MVP)
 - Take a recipe either directly from the user or by scrapping one online
 - Read it back to the user one step at a time 
 - Start off with a checklist of ingredients and supplies needed like pans to make sure the user has everything they need before they begin
