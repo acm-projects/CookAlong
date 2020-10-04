@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "serene-gradient-290820",
+  "private_key_id": "ef82eb8a31a511a357b41564cfea800ee22a672a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCk+3oZCJhF4e6N\nLmI8uPebw1C0WrI1z3A21qSNDiC5el6O8ec6eFH6SOxOP/XMesjZIpqdblpBtyKi\nVBboK+2v9tsJWu8mUSLW+Ag2eXS3jQXItW1qhEaHfWTnPUQgTgyyHc+q5dYNvUEq\ndRPcXDUucqqd9uovJMuj9Xe1eaStMAWDvylwekDuTFb2FBkkAVlQrlySJdpCTVch\ngndJR1GyFPYT4L2A9ORRuRA+SEtcob8lb/YpIIjsgqqNvkK5MOeTIpmewKCZ1cJI\nZZ5m0i4xQPI7LmwAL9ZWn02Vgkeecb1yRw/pSZfBUyZF80HzcAh079R5tB36fmY3\n/0uyX/RtAgMBAAECggEAA+/sbgSCfchyhPQCbCiN4C29E1DGx/n3V5evvZ4Eseh1\nsTucpQySCEMNQKDOIN8dQ/FLd05W4RKZxP30vf2uYnClsYd2BZgSGMc6ivJDEs5O\nwQdzYQNfG4Smj84qfgreyrFjb1Sk0xcdIwJAQxYAPueFotdtp0pdgcAt5yrL/0YI\nSbYIqiveU75s73Jjjgex77p2K9iQLYvKYJnP7dN9u1iH1LhVaV/jxmjlFY1q1xmj\nwcNTiVN9PdP9QTjHhYR7epgWgzZ0lBPXK8UfpkQA6qa2wM0X2Nmiy23639zmLsaq\nFFkrS/bYJXRFY7TLO3ggKpK8zUrovB5tbvnp4SYUAQKBgQDXhTNmz1yqOfau7a0y\n78MUmqwePKZUzDfBjERUoCvIilY/ZENDVYDzgdHjCU85C1YZItkhaUXI1sAgpShT\niunDLuFvtexfdKz69YwZf55MiU/djYIu1E/R1mfE5bLKyeKx0L1Az1VL3VUmRLxO\nbVM5IfF53nU1c8CxCa6zMhH7LQKBgQDD+EX4SKO6H5ZdFkMNa10L1/1ZdHpHkj4w\nsLXdUXfs3WPXN8W4vo3xFyi7ia22kgkNjjJxxzdNSpd5/ysXZe3vgnFuxVCwCO/w\noq2/RjINFqbdwqY9gg6PyMPsjxxpPdT2L7zvpwacX6sJ1FXlu0A5monp/NkX03tT\nZWtMtLCmQQKBgQCpGyQU9HoSO377DRVMlWKtpRuOcipU+RR6srPe7vrL1PgNr38z\ns0CGUQO+MEzQRrvc50IV/EM8bny8YLr+qk33z64l+EorMCKWm9q9Gyy7gzZ+cg2G\n7yJeVOyBS3Z5teVBfrcwxj54U4f/iglzREb72k1eQZYYReYZQ66nfo8rVQKBgARx\nhrSggQXhXXly3cZaHtv748S5fWRODpbwCs+f30ZBptfkbdlIiNNkoQnPj17KZOYn\nyUEHMVvRSyn6/TEkoIaDwKqwUqoLKdWc+q+RmeTuFI6GsVpHrqjX9olQnWZNfpyu\nbGxKrz2wdaJdbC0vV792n5Xso8eEhhFYBVzR5AeBAoGAJXkUz7pHotM24pWudF/K\nOtQ6UOBoXPidsb3IiJSHfY+wsTZBRz3POg552U9GC2+oDJC+8oCJklDcX0DeEP/V\nha1psuXqke7/mKAhGJChafTTetrOxNBvVwkLrQgnzpUjbnmo6//oAnG1QpYegho5\nXuQeaelyIngQDYF1Y0M81H4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "cookalong@serene-gradient-290820.iam.gserviceaccount.com",
+  "client_id": "107035480076758510488",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cookalong%40serene-gradient-290820.iam.gserviceaccount.com"
+}
