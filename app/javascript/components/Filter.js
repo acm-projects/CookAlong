@@ -6,11 +6,10 @@ export default class Filter extends React.Component {
             "diets": false,
             "allergies": false,
             "cuisines": false,
-            "time": false
+            "time": false,
         }
         this.hideFilters = this.hideFilters.bind(this);
         this.filterToRender;
-
         this.defaultStates = {
             "diets": false,
             "allergies": false,
@@ -21,12 +20,12 @@ export default class Filter extends React.Component {
     render() {
         return (
             <div>
-                <div className="tabs is-centered">
+                <div className="tabs is-centered filter-tabs">
                     <ul>
                         <li><a onClick={() => this.hideFilters("diets")}>Diets</a></li>
                         <li><a onClick={() => this.hideFilters("allergies")}>Allergies</a></li>
                         <li><a onClick={() => this.hideFilters("cuisines")}>Cuisines</a></li>
-                        <li><a onClick={() => this.hideFilters("time")}>Time</a></li>
+                        {/*<li><a onClick={() => this.hideFilters("time")}>Time</a></li>*/}
                     </ul>
                 </div>
                     {this.filterToRender}
@@ -62,42 +61,41 @@ export default class Filter extends React.Component {
     }
 
     Diets() {
+        let dietFilters = ["Gluten Free","Ketogenic", "Vegetarian", "Lacto-Vegetarian", "Ovo-Vegetarian", "Vegan", "Pescetarian", "Paleo", "Primal", "Whole30"]
+        const filterButtons = dietFilters.map((filter) => { return <p className="control" key={filter}><a className="button">{filter}</a></p> })
         return (
-            <div>
-                <label className="checkbox">
-                    <input type="checkbox"></input>
-                        DIETS HERE
-                    </label>
+            <div className="field is-grouped is-grouped-multiline is-grouped-centered filter-button-grid" id="diets">
+                {filterButtons}
             </div>
         )
+        
     }
     Allergies() {
+        let allergyFilters = ["Dairy","Egg","Gluten","Grain","Peanut","Seafood","Sesame","Shellfish","Soy","Sulfite","Tree Nut","Wheat"]
+        const filterButtons = allergyFilters.map((filter) => { return <p className="control" key={filter}><a className="button" >{filter}</a></p> })
         return (
             <div>
-                <label className="checkbox">
-                    <input type="checkbox"></input>
-                        ALLERGIES HERE
-                    </label>
+            <div className="field is-grouped is-grouped-multiline is-grouped-centered filter-button-grid" id="diets">
+                {filterButtons}
+            </div>
             </div>
         )
     }
     Cuisines() {
+        let cuisineFilters = ["African", "American", "British", "Cajun", "Caribbean","Chinese","Eastern European","European","French","German","Greek","Indian","Irish","Italian","Japanese",
+                               "Jewish", "Korean", "Latin American", "Mediterranean", "Mexican", "Middle Eastern", "Nordic","Southern","Spanish","Thai","Vietnamese"];
+
+        const filterButtons = cuisineFilters.map((filter) => { return <p className="control" key={filter}><a className="button">{filter}</a></p> })
         return (
-            <div>
-                <label className="checkbox">
-                    <input type="checkbox"></input>
-                        CUISINES HERE
-                    </label>
+            <div className="field is-grouped is-grouped-multiline is-grouped-centered filter-button-grid" id="cuisines">
+                {filterButtons}
             </div>
         )
     }
     Time() {
         return (
             <div>
-                <label className="checkbox">
-                    <input type="checkbox"></input>
-                        TIMES HERE
-                    </label>
+
             </div>
         )
       }

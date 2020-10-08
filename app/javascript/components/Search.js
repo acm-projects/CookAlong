@@ -19,16 +19,18 @@ export default class Search extends React.Component {
                 <section className="columns search-page">
                     <div className="column has-text-centered">
                         <div>
-                            <nav className="navbar">
+                            <nav className="navbar filter-bar">
                                 <div className="navbar-brand">
-                                    <button className="navbar-item" onClick={this.renderFilter}>Filter</button>
+                                    <i class="fas fa-angle-double-down"></i><a className="navbar-item" onClick={this.renderFilter}>Filter</a>
+                                </div>
+                                <div className="navbar-end">
+                                    <p className="navbar-item"> 12,234 recipes found relating to: Pizza</p>
                                 </div>
                             </nav>
                         </div>
                         <div className="container">
                             {this.state.isRenderFilter ? <Filter/> : ''}
                         </div>
-                        <p>12,234 recipes found relating to: Pizza</p>
                         <this.SearchResults />
                     </div>
                 </section>
@@ -40,16 +42,15 @@ export default class Search extends React.Component {
     
     SearchResults() {
         const testObject = [
-            {name: "Pizza"},
-            {name: "Carrot"},
-            {name: "Celery"},
-            {name: "Soup"},
-            {name: "Chocolate"},
-            {name: "Coffee"},
-            {name: "Hot Pocket"},
-            {name: "Water"}
+            {name: "Pizza", calories: 100, time: 50, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
+            {name: "Lasagna", calories: 700, time: 66, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
+            {name: "Pasta", calories: 600, time: 45, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
+            {name: "Spaghetti", calories: 500, time: 534, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
+            {name: "Water", calories: 200, time: 346, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
+            {name: "Salt", calories: 400, time: 346, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
+            {name: "Air", calories: 0, time: 36, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"}
         ]
-        const listResults = testObject.map((result) => <SearchResult name={result.name} key={result.name}/>)
+        const listResults = testObject.map((result) => <SearchResult name={result.name} key={result.name} calories={result.calories} time={result.time} imgUrl={result.imgUrl}/>)
         return (
             <div className="columns is-multiline search-grid">
                 {listResults}
