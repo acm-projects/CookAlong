@@ -1,8 +1,7 @@
 import React from "react";
-import Navbar from "./Navbar";
 import SearchResult from "./SearchResult";
 import Filter from "./Filter"
-import {Switch, Link, Route}from "react-router-dom";
+import Header from "./Header"
 
 export default class Search extends React.Component {
     constructor(props){
@@ -15,10 +14,10 @@ export default class Search extends React.Component {
         return (
             
             <div>
-                <Navbar />
-                <section className="columns search-page">
+                <Header />
+                <section className="columns search-page"  style={{paddingLeft: "5vw",paddingRight: "5vw"}}>
                     <div className="column has-text-centered">
-                        <div>
+                        <div className="filter-bar">
                             <nav className="navbar filter-bar">
                                 <div className="navbar-brand">
                                     <i class="fas fa-angle-double-down"></i><a className="navbar-item" onClick={this.renderFilter}>Filter</a>

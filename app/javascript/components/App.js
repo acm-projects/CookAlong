@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import Home from './Home'
-import Navbar from './Navbar'
 import Search from './Search'
 
 import {
