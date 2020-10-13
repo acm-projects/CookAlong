@@ -1,0 +1,29 @@
+@import "bulma";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+$montserrat: 'Montserrat', sans-serif;
+
+.navbar-header {
+    background-color: #B7B7A4;
+    padding: 1vw;
+}
+
+.logo {
+    font-family: $montserrat;
+    font-weight: bold;
+    color: white;
+}
+
+.logo a {
+    color: white;
+}
+
+.logo a:hover {
+    color: white;
+}
+
+.input-search {
+    width: 30vw;
+    font-family: $montserrat;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.2);
+}

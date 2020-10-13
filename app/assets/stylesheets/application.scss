@@ -1,0 +1,104 @@
+$card-content-padding: .5rem;
+
+@import "bulma";
+@import url('//fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Open+Sans:wght@100&display=swap');
+
+
+$montserrat: 'Montserrat', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+
+html {
+	background-color: #F0EFEB;
+}
+.hero-parent {
+	position: relative;
+	z-index: 1;
+	min-width: 100%;
+	min-height: 100%;
+	margin: 0;
+	.bg {
+		position: absolute;
+		z-index: -1;
+		opacity: .3;
+		background-position: center;
+		background-size: cover;
+		background-image: image-url('1.jpg');
+		background-color: #CB997E;
+		min-width: 100%;
+		min-height: 100%;
+	}
+}
+.hero-body {
+	width: 100%;
+	height: 100%;
+}
+.title-home {
+    font-family: $montserrat;
+    font-weight: lighter;
+	font-size: calc(3em + 4vw);
+	text-align: center;
+
+} 
+.input {
+	width: 70vw;
+}
+.home-button {
+	margin-left: 10px;
+}
+.search-grid {
+	padding-top: 1%;
+}
+.title {
+	font-size: calc(1em + .5vw);
+	font-family: $montserrat;
+}
+.image-div {
+	object-fit: cover;
+	width: 100%;
+	height: 256px;
+	overflow:hidden;
+	border-top-left-radius:20px;
+	border-top-right-radius:20px;
+	
+}
+
+.search-page {
+	margin-left: 5vw;
+	margin-right: 5vw;
+	
+}
+
+.food-title {
+	font-size: calc(1.4em + .05vw);
+	font-family: $montserrat;
+	font-weight: bold;
+}
+
+.card {
+	border-radius: 20px;
+}
+
+.card-footer-item {
+	font-family: $open-sans;
+}
+
+.filter-bar {
+	background-color:#FFF1E6;
+}
+
+.navbar-item {
+	font-family: $montserrat;
+	font-weight: bold;
+	font-size: calc(1em + .05vw);
+}
+
+button {
+	font-family: $open-sans;
+	font-weight: lighter;
+}
+
+.filter-tabs {
+	font-family: $montserrat;
+	font-weight: bolder;
+	font-size: calc(1em + .05vw);
+}
