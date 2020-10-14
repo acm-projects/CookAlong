@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import Home from './Home'
 import Search from './Search'
+import RecipePage from './RecipePage'
 
 import {
     BrowserRouter as Router,
@@ -21,7 +22,9 @@ class App extends Component {
                     <Route path="/search">
                         <Search />
                     </Route>
-                    
+                    <Route path="/recipe">
+                        <RecipePage />
+                    </Route>
                 </Switch>              
             </Router>
         )

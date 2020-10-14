@@ -1,21 +1,28 @@
 import React from 'react';
-import "../../assets/stylesheets/header.scss"
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { Button } from "react-bulma-components";
+import '../../assets/stylesheets/header.scss';
+
 function Header() {
     return (
-        <nav className="navbar navbar-header" role="navigation" aria-label="main navigation">
-            <div className="navbar-brand logo">
+        <nav class="navbar navbar-header" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand logo">
                 <Link to="/"><a className="navbar-item is-size-3-desktop is-size-3-tablet is-size-4-mobile">CookAlong</a></Link>
             </div>
-            <div className="navbar-menu">
-                <div className="navbar-start"></div>
-                <div className="navbar-end">
-                    <div className="navbar-item">
-                        <div className="control has-icons-left">
-                        <input className="input input-search" type="text" placeholder="Search for recipes..."></input>
-                        <span className="icon is-left">
-                            <i className="fas fa-search"></i>
-                        </span>
+            <div class="navbar-menu">
+                <div class="navbar-start"></div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="field has-addons">
+                            <div class="control has-icons-left">
+                                <input class="input input-search" type="text" placeholder="Search for recipes..." />
+                                <span class="icon is-left">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </div>
+                            <div class="control">
+                                <Link to="/search"><Button class="button search-button" color="light">Search</Button></Link>
+                            </div>
                         </div>
                     </div>
                 </div>
