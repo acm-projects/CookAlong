@@ -109,7 +109,7 @@ export default class RecipePage extends React.Component {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                     <section class="content">
                         <div class="container ingredients-container">
                             <div class="columns is-mobile">
@@ -121,7 +121,6 @@ export default class RecipePage extends React.Component {
                                         <div class="column is-one-third us">
                                             <a class="is-size-6-desktop is-size-6-tablet is-size-7-mobile has-text-weight-normal" href="javascript:void(0)">US</a>
                                         </div>
-                                        <div class="is-divider-vertical" data-content="OR"></div>
                                         <div class="column is-two-thirds metric">
                                             <a class="is-size-6-desktop is-size-6-tablet is-size-7-mobile has-text-weight-normal" href="javascript:void(0)">METRIC</a>
                                         </div>
