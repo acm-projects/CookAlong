@@ -15,13 +15,10 @@ class App extends Component {
         return (
             <Router>
                 <Switch>
-                    <Route exact path="/">
-                         <Home />
+                    <Route exact path="/" component={Home}>
                     </Route>
-                    <Route path="/search">
-                        <Search />
+                    <Route exact path="/search/:recipe" name="Search" component={Search}>
                     </Route>
-                    
                 </Switch>              
             </Router>
         )

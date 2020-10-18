@@ -2,17 +2,31 @@ import React from "react";
 import SearchResult from "./SearchResult";
 import Filter from "./Filter"
 import Header from "./Header"
+import SearchRecipe from "./SearchQuery"
+import { withRouter } from "react-router-dom"
 
 export default class Search extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {isRenderFilter: false};
+        this.state = {loading: true};
+        this.state = {searchResults: null};
 
         this.renderFilter = this.renderFilter.bind(this);
+        this.displaySearchResults = this.displaySearchResults.bind(this);
     }
+
+    async componentDidMount() {
+
+        this.searchObject = new SearchRecipe(this.props.match.params.recipe);
+        await this.searchObject.getSearchResult();
+        const testObj = await this.searchObject.parse();
+        const listResults = testObj.map((result) => <SearchResult name={result.name} key={result.name} calories={result.calories} time={result.time} imgUrl={result.imgUrl}/>)
+        this.setState({searchResults: listResults});
+    }
+
     render() {
         return (
-            
             <div>
                 <Header />
                 <section className="columns search-page"  style={{paddingLeft: "5vw",paddingRight: "5vw"}}>
@@ -30,29 +44,17 @@ export default class Search extends React.Component {
                         <div className="container">
                             {this.state.isRenderFilter ? <Filter/> : ''}
                         </div>
-                        <this.SearchResults />
+                        {this.state.loading || this.state.searchResults == null ? <div>loading...</div> : <this.displaySearchResults />}
                     </div>
                 </section>
             </div>
         );
     }
     
-
-    
-    SearchResults() {
-        const testObject = [
-            {name: "Pizza", calories: 100, time: 50, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
-            {name: "Lasagna", calories: 700, time: 66, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
-            {name: "Pasta", calories: 600, time: 45, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
-            {name: "Spaghetti", calories: 500, time: 534, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
-            {name: "Water", calories: 200, time: 346, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
-            {name: "Salt", calories: 400, time: 346, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
-            {name: "Air", calories: 0, time: 36, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"}
-        ]
-        const listResults = testObject.map((result) => <SearchResult name={result.name} key={result.name} calories={result.calories} time={result.time} imgUrl={result.imgUrl}/>)
+    displaySearchResults() {
         return (
             <div className="columns is-multiline search-grid">
-                {listResults}
+                {this.state.searchResults}
             </div>);
     }
 
