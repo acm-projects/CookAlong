@@ -12,12 +12,16 @@ export default class Search extends React.Component {
         this.state = {loading: true};
         this.state = {searchResults: null};
 
+        console.log(this.props.match.params.recipe);
+
         this.renderFilter = this.renderFilter.bind(this);
         this.displaySearchResults = this.displaySearchResults.bind(this);
     }
 
+    //this needs to be async so I can use asynchronous code for API calls. 
+    //If I don't do this the API call wouldn't finish before the method would return
     async componentDidMount() {
-
+        console.log("Creating new search");
         this.searchObject = new SearchRecipe(this.props.match.params.recipe);
         await this.searchObject.getSearchResult();
         const testObj = await this.searchObject.parse();
@@ -44,7 +48,10 @@ export default class Search extends React.Component {
                         <div className="container">
                             {this.state.isRenderFilter ? <Filter/> : ''}
                         </div>
-                        {this.state.loading || this.state.searchResults == null ? <div>loading...</div> : <this.displaySearchResults />}
+                        {/*Shows loading if the api call hasn't finished or if the api returned nothing*/
+                        this.state.loading || this.state.searchResults == null ? 
+                        <div>loading...</div> : 
+                        <this.displaySearchResults />}
                     </div>
                 </section>
             </div>

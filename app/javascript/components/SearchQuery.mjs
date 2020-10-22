@@ -8,13 +8,25 @@ export default class SearchRecipe {
     }
 
     async getSearchResult() {
-        await axios.get("https://api.spoonacular.com/recipes/complexSearch?apiKey=0a7373376120478498c58837be29c272&addRecipeInformation=true&addRecipeNutrition=true&instructionsRequired=true&query=" + this.query) 
+        this.query.replace(" ", "+"); //The API needs multiple word search in the [word1]+[word2]+[word...] format
+
+        await axios.get("https://api.spoonacular.com/recipes/complexSearch?apiKey=0a7373376120478498c58837be29c272&number=20&addRecipeInformation=true&addRecipeNutrition=true&instructionsRequired=true&query=" + this.query) 
         .then ( response => {
             this.response = response.data;
         })
     }
 
     async parse() {
+        // const testObject = [
+        //     {name: "Pizza", calories: 100, time: 50, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
+        //     {name: "Lasagna", calories: 700, time: 66, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
+        //     {name: "Pasta", calories: 600, time: 45, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
+        //     {name: "Spaghetti", calories: 500, time: 534, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
+        //     {name: "Water", calories: 200, time: 346, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
+        //     {name: "Salt", calories: 400, time: 346, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"},
+        //     {name: "Air", calories: 0, time: 36, imgUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"}
+        // ]
+        // return testObject;
         var result;
         var recipeID;
         var recipeTitle;
