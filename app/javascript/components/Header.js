@@ -25,14 +25,6 @@ export class Header extends React.Component {
     }
 
     render() {
-        const linkTarget = {
-            pathname: `/search/${this.state.toSerach}`,
-            key: Math.random(),
-            state: {
-                applied: true
-            }
-        };
-
         return (
             <nav className="navbar navbar-header" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand logo">
@@ -47,7 +39,7 @@ export class Header extends React.Component {
                                 <div>
                                     <input className="input input-search" type="text" placeholder="Search for recipes..."
                                     onChange={this.handleSearchChange} value={this.state.toSerach}></input>
-                                    <Link to={linkTarget}><Button className="home-button" color="light">Search</Button></Link>
+                                    <Link to={{pathname: `search/${this.state.toSerach}`}}><Button className="home-button" color="light">Search</Button></Link>
                                 </div>
                             </form>
                             <span className="icon is-left">

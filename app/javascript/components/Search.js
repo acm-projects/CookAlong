@@ -1,9 +1,9 @@
 import React from "react";
 import SearchResult from "./SearchResult";
 import Filter from "./Filter"
-import Header from "./Header"
 import SearchRecipe from "./SearchQuery"
-import { withRouter } from "react-router-dom"
+import {Link, Route, Router} from 'react-router-dom'
+import { Button } from "react-bulma-components"
 
 export default class Search extends React.Component {
     constructor(props) {
@@ -11,11 +11,26 @@ export default class Search extends React.Component {
         this.state = {isRenderFilter: false};
         this.state = {loading: true};
         this.state = {searchResults: null};
+        this.state = {toSerach: ''}
+        this.state = {reloadHelper: this.props.match.params.recipe}
 
-        console.log(this.props.match.params.recipe);
 
         this.renderFilter = this.renderFilter.bind(this);
         this.displaySearchResults = this.displaySearchResults.bind(this);
+        this.handleSearchChange = this.handleSearchChange.bind(this);
+        this.searchSubmit = this.searchSubmit.bind(this);
+    }
+    
+    handleSearchChange = (event) => {
+        this.setState({toSerach: event.target.value})
+    }
+
+    searchSubmit() {
+        if(this.state.reloadHelper != this.props.match.params.recipe) {
+            this.setState({reloadHelper: this.props.match.params.recipe})
+            this.componentDidMount();
+            console.log("Should reload");
+        }
     }
 
     //this needs to be async so I can use asynchronous code for API calls. 
@@ -32,7 +47,30 @@ export default class Search extends React.Component {
     render() {
         return (
             <div>
-                <Header />
+                <nav className="navbar navbar-header" role="navigation" aria-label="main navigation">
+                <div className="navbar-brand logo">
+                    <Link to="/"><a className="navbar-item is-size-3-desktop is-size-3-tablet is-size-4-mobile">CookAlong</a></Link>
+                </div>
+                <div className="navbar-menu">
+                    <div className="navbar-start"></div>
+                    <div className="navbar-end">
+                        <div className="navbar-item">
+                            <div className="control has-icons-left">
+                            <form className="searchForm" onSubmit={this.searchSubmit()}>
+                                <div>
+                                    <input className="input input-search" type="text" placeholder="Search for recipes..."
+                                    onChange={this.handleSearchChange} value={this.state.toSerach}></input>
+                                    <Link to={{pathname: `${this.state.toSerach}`}}><Button className="home-button" color="light">Search</Button></Link>
+                                </div>
+                            </form>
+                            <span className="icon is-left">
+                                <i className="fas fa-search"></i>
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
                 <section className="columns search-page"  style={{paddingLeft: "5vw",paddingRight: "5vw"}}>
                     <div className="column has-text-centered">
                         <div className="filter-bar">
