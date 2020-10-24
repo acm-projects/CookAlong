@@ -3,6 +3,11 @@ import SearchResult from "./SearchResult";
 import Filter from "./Filter"
 import Header from "./Header"
 
+/*
+Props:
+    numFound = num of recipes found
+    searchResult = what was searched
+*/
 export default class Search extends React.Component {
     constructor(props){
         super(props);
@@ -20,10 +25,10 @@ export default class Search extends React.Component {
                         <div className="filter-bar">
                             <nav className="navbar filter-bar">
                                 <div className="navbar-brand">
-                                    <i class="fas fa-angle-double-down"></i><a className="navbar-item" onClick={this.renderFilter}>Filter</a>
+                                    <a className="navbar-item" onClick={this.renderFilter}>Filter</a>
                                 </div>
                                 <div className="navbar-end">
-                                    <p className="navbar-item"> 12,234 recipes found relating to: Pizza</p>
+                                    <p className="navbar-item"> {this.props.numFound} recipes found relating to: {this.props.searchResult}</p>
                                 </div>
                             </nav>
                         </div>

@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import Home from './Home'
 import Search from './Search'
+import StepsPage from './StepsPage'
+
 
 import {
     BrowserRouter as Router,
@@ -21,7 +23,9 @@ class App extends Component {
                     <Route path="/search">
                         <Search />
                     </Route>
-                    
+                    <Route path="/steps">
+                        <StepsPage />
+                    </Route>
                 </Switch>              
             </Router>
         )
