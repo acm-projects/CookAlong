@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+$montserrat: 'Montserrat', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+
+.hero-section {
+    background-color: #F0EFEB;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 5vw;
+}
+
+.picture img{
+    object-fit: cover;
+    width: 400px;
+    height: 400px;
+    border-radius: 1em;
+}
+
+.recipe-title {
+    font-family: $montserrat;
+    font-weight: bold;
+
+}
+
+.begin-button {
+    background-color: #EAC9B2;
+    width: 160px;
+    height: 45px;
+    font-family: $montserrat;
+    font-weight: bold;
+}
+
+.begin-button:hover {
+    background-color: #F4CDB4;
+}
+
+.time {
+    display: flex;
+    align-items: center;
+}
+
+.recipe-time {
+    font-family: $montserrat;
+    padding-left: 1em;
+}
+
+.ingredients-container {
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.ingredients-title {
+    font-family: $montserrat;
+    font-weight: bold;
+    margin-bottom: 0vw;
+}
+
+.units {
+    font-family: $montserrat;
+    justify-items: center;
+    align-items: center;
+}
+
+.us {
+    color: black;
+    margin: 0.5vw;
+}
+
+.us a {
+    color: black;
+}
+
+.us a:focus {
+    color: #A76843;
+    font-weight: bold;
+}
+
+.metric {
+    padding-left: 0vw;
+    color: black;
+    margin: 0.5vw;
+}
+
+.metric a {
+    color: black;
+}
+
+.metric a:focus {
+    color: #A76843;
+}
+
+.servings {
+    font-family: $montserrat;
+    justify-items: center;
+    align-items: center;
+}
+
+.servings-text {
+    color: black;
+    margin: 0.75vw;
+}
+
+.servings-input {
+    margin-left: 1vw;
+}
+
+.ingredients-list {
+    color: black;
+    font-family: $open-sans;
+}
+
+.directions {
+    padding-top: 2vw;
+}
+
+.directions-title {
+    font-family: $montserrat;
+    font-weight: bold;
+}
+
+.directions-list {
+    color: black;
+    font-family: $open-sans;
+    padding-top: 0.3vw;
+}
+
+.begin-button-bottom {
+    background-color: #EAC9B2;
+    width: 160px;
+    height: 45px;
+    font-family: $montserrat;
+    font-weight: bold;
+    margin-top: 5vw;
+}
+
+.begin-button-bottom:hover {
+    background-color: #F4CDB4;
+}
+
+.overview-more-info {
+    text-align: center;
+    font-family: $montserrat;
+    padding-top: 3vw;
+}
