@@ -1,8 +1,7 @@
 $card-content-padding: .5rem;
 
-@import "bulma";
+@import 'bulma';
 @import url('//fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Open+Sans:wght@100&display=swap');
-
 
 $montserrat: 'Montserrat', sans-serif;
 $open-sans: 'Open Sans', sans-serif;
@@ -93,12 +92,6 @@ html {
 
 .filter-bar {
 	background-color:#FFF1E6;
-}
-
-.navbar-item {
-	font-family: $montserrat;
-	font-weight: bold;
-	font-size: calc(1em + .05vw);
 }
 
 button {

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import Home from './Home'
 import Search from './Search'
 import StepsPage from './StepsPage'
-
+import RecipePage from './RecipePage'
 
 import {
     BrowserRouter as Router,
@@ -17,11 +17,11 @@ class App extends Component {
         return (
             <Router>
                 <Switch>
-                    <Route exact path="/">
-                         <Home />
+                    <Route exact path="/" exact component={Home}>
                     </Route>
-                    <Route path="/search">
-                        <Search />
+                    <Route exact path="/search/:recipe" name="Search" exact component={Search}>
+                    </Route>
+                    <Route exact path="/recipe/:id" exact component={RecipePage}>
                     </Route>
                     <Route path="/steps">
                         <StepsPage />
