@@ -1,50 +1,55 @@
 import React from 'react';
 import Header from './Header';
+import InstructionsQuery from "./InstructionQuery.mjs"
 import '../../assets/stylesheets/recipe-page.scss';
 
 export default class RecipePage extends React.Component {
 
     constructor(props) {
         super(props);
+        
+        this.image = "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=706&q=80";
+        this.recipeTitle = "loading...";
+        this.time = "loading...";
+        this.numIngredients = "loading...";
+        this.numSteps = "loading...";
+        this.numCalories = "loading...";
+        this.servings = "loading...";
+
+        this.ingredients = ["loading..."];
+        this.directions = ["loading..."];
+
+        this.state = {loading: true};
+        this.state = {searchResults: null};
+        this.recipeID = this.props.match.params.id;
+    }
+
+    async componentDidMount() {
+        this.searchObject = new InstructionsQuery(this.recipeID);
+        await this.searchObject.getSearchResult();
+
+        const recipeInfo = await this.searchObject.parse();
+        this.image = recipeInfo["image"];
+        this.recipeTitle = recipeInfo["recipeTitle"];
+        this.time = recipeInfo["time"];
+        this.numIngredients = recipeInfo["numIngredients"];
+        this.numSteps = recipeInfo["numSteps"];
+        this.numCalories = recipeInfo["numCalories"];
+        this.servings = recipeInfo["servings"];
+
+        this.ingredients = recipeInfo["ingredients"];
+        this.directions = recipeInfo["directions"];
+
+        this.setState({loading: false});
     }
 
     render() {
-        var image = "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=706&q=80";
-        var recipeTitle = "Avocado and Egg Toast";
-        var time = "10 minutes";
-        var numIngredients = 8;
-        var numSteps = 10;
-        var numCalories = 1200;
-        var servings = 4;
 
-        const ingredients = [
-            "Incididunt Lorem fugiat.",
-            "Incididunt Lorem fugiat.",
-            "Incididunt Lorem fugiat.",
-            "Incididunt Lorem fugiat.",
-            "Incididunt Lorem fugiat.",
-            "Incididunt Lorem fugiat.",
-            "Incididunt Lorem fugiat.",
-        ];
-
-        const listIngredients = ingredients.map((ingredient)=>{
+        const listIngredients = this.ingredients.map((ingredient)=>{
             return <li>{ingredient}</li>;
         });
 
-        const directions = [
-            "Consequat sunt dolor culpa pariatur proident enim laborum minim ea laborum.",
-            "Consequat sunt dolor culpa pariatur proident enim laborum minim ea laborum.",
-            "Consequat sunt dolor culpa pariatur proident enim laborum minim ea laborum.",
-            "Consequat sunt dolor culpa pariatur proident enim laborum minim ea laborum.",
-            "Consequat sunt dolor culpa pariatur proident enim laborum minim ea laborum.",
-            "Consequat sunt dolor culpa pariatur proident enim laborum minim ea laborum.",
-            "Consequat sunt dolor culpa pariatur proident enim laborum minim ea laborum.",
-            "Consequat sunt dolor culpa pariatur proident enim laborum minim ea laborum.",
-            "Consequat sunt dolor culpa pariatur proident enim laborum minim ea laborum.",
-            "Consequat sunt dolor culpa pariatur proident enim laborum minim ea laborum."
-        ];
-
-        const listDirections = directions.map((direction)=>{
+        const listDirections = this.directions.map((direction)=>{
             return <li>{direction}</li>;
         });
 
@@ -57,13 +62,13 @@ export default class RecipePage extends React.Component {
                             <div class="columns">
                                 <div class="column is-two-fifths picture">
                                     <figure class="image">
-                                        <img src={image}></img>
+                                        <img src={this.image}></img>
                                     </figure>
                                 </div>
                                 <div class="column is-three-fifths info">
                                     <div class="columns">
                                         <div class="column title">
-                                            <h1 class="title is-size-1-desktop is-size-2-tablet is-size-3-mobile recipe-title">{recipeTitle}</h1>
+                                            <h1 class="title is-size-1-desktop is-size-2-tablet is-size-3-mobile recipe-title">{this.recipeTitle}</h1>
                                             <div class="columns is-mobile">
                                                 <div class="column is-half begin">
                                                     <button class="button is-rounded begin-button">
@@ -77,19 +82,19 @@ export default class RecipePage extends React.Component {
                                                     <span class="icon is-small clock">
                                                         <i class="far fa-clock"></i>
                                                     </span>
-                                                    <span class="is-size-4-desktop is-size-5-tablet is-size-6-mobile has-text-weight-normal recipe-time">{time}</span>
+                                                    <span class="is-size-4-desktop is-size-5-tablet is-size-6-mobile has-text-weight-normal recipe-time">{this.time}</span>
                                                 </div>
                                             </div>
                                             <div class="overview-more-info">
                                                 <div class="columns is-size-2-desktop is-size-3-tablet is-size-4-mobile is-mobile has-text-weight-normal overview-numbers">
                                                     <div class="column is-one-third ingredients-number">
-                                                        <p>{numIngredients}</p>
+                                                        <p>{this.numIngredients}</p>
                                                     </div>
                                                     <div class="column is-one-third steps-number">
-                                                        <p>{numSteps}</p>
+                                                        <p>{this.numSteps}</p>
                                                     </div>
                                                     <div class="column is-one-third calories-number">
-                                                        <p>{numCalories}</p>
+                                                        <p>{this.numCalories}</p>
                                                     </div>
                                                 </div>
                                                 <div class="columns is-size-4-desktop is-size-5-tablet is-size-6-mobile is-mobile has-text-weight-normal overview-descriptions">
@@ -129,7 +134,7 @@ export default class RecipePage extends React.Component {
                                 <div class="column is-one-fifth">
                                     <div class="columns servings">
                                         <div class="column">
-                                            <h6 class="is-size-6-desktop is-size-6-tablet is-size-7-mobile has-text-weight-normal servings-text">SERVINGS: {servings}</h6>
+                                            <h6 class="is-size-6-desktop is-size-6-tablet is-size-7-mobile has-text-weight-normal servings-text">SERVINGS: {this.servings}</h6>
                                         </div>                                                                           
                                         {/*<div class="column is-one-third servings-input">
                                             <div class="field">
