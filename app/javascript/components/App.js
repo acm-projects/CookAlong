@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import Home from './Home'
 import Search from './Search'
+import StepsPage from './StepsPage'
 import RecipePage from './RecipePage'
 
 import {
@@ -21,6 +22,9 @@ class App extends Component {
                     <Route exact path="/search/:recipe" name="Search" exact component={Search}>
                     </Route>
                     <Route exact path="/recipe/:id" exact component={RecipePage}>
+                    </Route>
+                    <Route path="/steps">
+                        <StepsPage />
                     </Route>
                 </Switch>              
             </Router>

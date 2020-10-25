@@ -26,6 +26,15 @@ html {
 		min-width: 100%;
 		min-height: 100%;
 	}
+	.steps-bg {
+		position: absolute;
+		z-index: -1;
+		background-color:  #CB997E;
+		background-position: center;
+		background-size: cover;
+		min-width: 100%;
+		min-height: 100%;
+	}
 }
 .hero-body {
 	width: 100%;
@@ -94,4 +103,91 @@ button {
 	font-family: $montserrat;
 	font-weight: bolder;
 	font-size: calc(1em + .05vw);
+}
+
+.steps-page {
+	background-color: #FFF1E6;
+	height: 90vh;
+	width: 90vw;
+	border-radius: 20px;
+	
+}
+
+.step-image {
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+.step-food {
+	font-size: calc(3em + 1vw);
+	font-family: $montserrat;
+	font-weight: bold;
+	color: black;
+}
+.step-steps{
+	font-size: calc(2em + .05vw);
+	padding-top: 1vw;
+	font-family: $open-sans;
+	font-weight: bold;
+	color: black;
+	margin-top: auto;
+	@include until($desktop){
+		font-size: calc(1em + 1vw);
+	}
+	
+}
+.right-column {
+	padding: 6%;
+}
+
+.page {
+	margin-top: auto;
+	position: absolute;
+	bottom: 0;
+	color: black;
+	padding-top: 35%;
+
+}
+
+.page span {
+	color: black;
+}
+
+.step-tab {
+	color: black;
+	font-size: 1em;
+}
+
+.steps-button{
+	position:absolute;
+	z-index:100;
+	@include from($tablet){
+		left: 5%;
+		top: 2%;
+	}
+	@include until($desktop){
+		bottom: 5%;
+		left: 32%;
+		right: 50%;
+	}
+}
+
+.left-arrow {
+	position: absolute;
+	z-index: 100;
+	left: 1%;
+	top: 45%;
+}
+
+.right-arrow {
+	position: absolute;
+	z-index:100;
+	right: 1%;
+	top: 45%;
 }
