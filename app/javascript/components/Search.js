@@ -16,8 +16,8 @@ export default class Search extends React.Component {
         this.state = {isRenderFilter: false};
         this.state = {loading: true};
         this.state = {searchResults: null};
-        this.state = {toSerach: ''}
-        this.state = {reloadHelper: this.props.match.params.recipe}
+        this.state = {toSerach: ''};
+        this.state = {reloadHelper: this.props.match.params.recipe};
 
         this.renderFilter = this.renderFilter.bind(this);
         this.displaySearchResults = this.displaySearchResults.bind(this);

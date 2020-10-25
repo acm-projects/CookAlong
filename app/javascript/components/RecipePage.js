@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import InstructionsQuery from "./InstructionQuery.mjs"
+import {Link} from "react-router-dom";
 import '../../assets/stylesheets/recipe-page.scss';
 
 export default class RecipePage extends React.Component {
@@ -20,7 +21,6 @@ export default class RecipePage extends React.Component {
         this.directions = ["loading..."];
 
         this.state = {loading: true};
-        this.state = {searchResults: null};
         this.recipeID = this.props.match.params.id;
     }
 
@@ -71,12 +71,14 @@ export default class RecipePage extends React.Component {
                                             <h1 class="title is-size-1-desktop is-size-2-tablet is-size-3-mobile recipe-title">{this.recipeTitle}</h1>
                                             <div class="columns is-mobile">
                                                 <div class="column is-half begin">
-                                                    <button class="button is-rounded begin-button">
-                                                        <span class="icon">
-                                                            <i class="far fa-play-circle"></i>
-                                                        </span>
-                                                        <span class="text is-size-5-desktop is-size-5-tablet is-size-5-mobile">BEGIN</span>
-                                                    </button>
+                                                    <Link to={"/steps/"+this.recipeID}>
+                                                        <button class="button is-rounded begin-button">
+                                                            <span class="icon">
+                                                                <i class="far fa-play-circle"></i>
+                                                            </span>
+                                                            <span class="text is-size-5-desktop is-size-5-tablet is-size-5-mobile">BEGIN</span>
+                                                        </button>
+                                                    </Link>
                                                 </div>
                                                 <div class="column is-half time">
                                                     <span class="icon is-small clock">
@@ -159,12 +161,14 @@ export default class RecipePage extends React.Component {
                                     </ol>
                                 </div>
                             </div>
-                            <button class="button is-rounded begin-button-bottom">
-                                <span class="icon">
-                                    <i class="far fa-play-circle"></i>
-                                        </span>
-                                <span class="text is-size-5-desktop is-size-5-tablet is-size-6-mobile">BEGIN</span>
-                            </button>
+                            <Link to={"/steps/"+this.recipeID}>
+                                <button class="button is-rounded begin-button-bottom">
+                                    <span class="icon">
+                                        <i class="far fa-play-circle"></i>
+                                            </span>
+                                    <span class="text is-size-5-desktop is-size-5-tablet is-size-6-mobile">BEGIN</span>
+                                </button>
+                            </Link>
                         </div>
                     </section>
                 </section>

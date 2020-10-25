@@ -23,10 +23,9 @@ class App extends Component {
                     </Route>
                     <Route exact path="/recipe/:id" exact component={RecipePage}>
                     </Route>
-                    <Route path="/steps">
-                        <StepsPage />
+                    <Route path="/steps/:id" exact component={StepsPage}>
                     </Route>
-                </Switch>              
+                </Switch>
             </Router>
         )
     }
