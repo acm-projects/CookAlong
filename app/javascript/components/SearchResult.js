@@ -9,7 +9,7 @@ export default class SearchResult extends React.Component {
     render() {
         return (
             <div className="column is-2 is-touch">
-                <Link to="/recipe"><div className="card">
+                <Link to={`/recipe/${this.props.recipeID}`}><div className="card">
                     <div className="card-image">
                         <figure className="image is-square image-div">
                             <img src={this.props.imgUrl} alt="main recipe"></img>

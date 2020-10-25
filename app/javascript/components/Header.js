@@ -10,7 +10,6 @@ export class Header extends React.Component {
         this.state = {toSerach: ''}
         
         this.formSubmitted = false;
-        console.log("new header");
 
         this.handleSearchChange = this.handleSearchChange.bind(this);
         this.searchSubmit = this.searchSubmit.bind(this);
@@ -39,7 +38,7 @@ export class Header extends React.Component {
                                 <div>
                                     <input className="input input-search" type="text" placeholder="Search for recipes..."
                                     onChange={this.handleSearchChange} value={this.state.toSerach}></input>
-                                    <Link to={{pathname: `search/${this.state.toSerach}`}}><Button className="home-button" color="light">Search</Button></Link>
+                                    <Link to={"/search/" + this.state.toSerach}><Button className="home-button" color="light">Search</Button></Link>
                                 </div>
                             </form>
                             <span className="icon is-left">

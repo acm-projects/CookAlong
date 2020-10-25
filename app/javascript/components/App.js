@@ -20,8 +20,7 @@ class App extends Component {
                     </Route>
                     <Route exact path="/search/:recipe" name="Search" exact component={Search}>
                     </Route>
-                    <Route path="/recipe">
-                        <RecipePage />
+                    <Route exact path="/recipe/:id" exact component={RecipePage}>
                     </Route>
                 </Switch>              
             </Router>

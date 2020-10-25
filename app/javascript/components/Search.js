@@ -1,7 +1,7 @@
 import React from "react";
 import SearchResult from "./SearchResult";
 import Filter from "./Filter"
-import SearchRecipe from "./SearchQuery"
+import SearchRecipe from "./SearchQuery.mjs"
 import {Link, Route, Router} from 'react-router-dom'
 import { Button } from "react-bulma-components"
 
@@ -13,7 +13,6 @@ export default class Search extends React.Component {
         this.state = {searchResults: null};
         this.state = {toSerach: ''}
         this.state = {reloadHelper: this.props.match.params.recipe}
-
 
         this.renderFilter = this.renderFilter.bind(this);
         this.displaySearchResults = this.displaySearchResults.bind(this);
@@ -29,18 +28,16 @@ export default class Search extends React.Component {
         if(this.state.reloadHelper != this.props.match.params.recipe) {
             this.setState({reloadHelper: this.props.match.params.recipe})
             this.componentDidMount();
-            console.log("Should reload");
         }
     }
 
     //this needs to be async so I can use asynchronous code for API calls. 
     //If I don't do this the API call wouldn't finish before the method would return
     async componentDidMount() {
-        console.log("Creating new search");
         this.searchObject = new SearchRecipe(this.props.match.params.recipe);
         await this.searchObject.getSearchResult();
         const testObj = await this.searchObject.parse();
-        const listResults = testObj.map((result) => <SearchResult name={result.name} key={result.name} calories={result.calories} time={result.time} imgUrl={result.imgUrl}/>)
+        const listResults = testObj.map((result) => <SearchResult recipeID={result.recipeID} name={result.name} key={result.name} calories={result.calories} time={result.time} imgUrl={result.imgUrl}/>)
         this.setState({searchResults: listResults});
     }
 
