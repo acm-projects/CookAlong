@@ -10,6 +10,7 @@ import InstructionsQuery from "./InstructionQuery.mjs"
         calories
         imgUrl
 */     
+const textToSpeech = window.speechSynthesis;
 export default class StepsPage extends React.Component {
     constructor(props){
         super(props);
@@ -46,18 +47,32 @@ export default class StepsPage extends React.Component {
         this.directions = recipeInfo["directions"];
 
         this.setState({loading: false});
+
+        let utter = new SpeechSynthesisUtterance(this.directions[this.state.currentStep-1]);
+        textToSpeech.speak(utter);
+    }
+
+    componentDidUpdate(){
+        
     }
 
     rightButtonPressed() {
         if(this.state.currentStep < this.numSteps) {
-            this.setState({currentStep: this.state.currentStep + 1})
+            this.setState({currentStep: this.state.currentStep + 1}, () => this.speak(this.directions[this.state.currentStep-1]))
         }
     }
 
     leftButtonPressed() {
         if(this.state.currentStep > 1) {
-            this.setState({currentStep: this.state.currentStep - 1})
+            this.setState({currentStep: this.state.currentStep - 1}, () => this.speak(this.directions[this.state.currentStep-1]))
         }
+    }
+
+    speak(text){
+        textToSpeech.cancel()
+        let utter = new SpeechSynthesisUtterance(text);
+        utter.rate = 1.5;
+        textToSpeech.speak(utter);
     }
 
     render() {
@@ -70,7 +85,7 @@ export default class StepsPage extends React.Component {
                         <div className="steps-button">
                             <Link to="/"><button class="button is-rounded is-medium">Home</button></Link>
                         </div>
-                            <img className="step-image column is-half is-hidden-touch" src={this.image}></img>
+                            <img className="step-image column is-half is-hidden-touch is-square" src={this.image}></img>
                             <div className="column is-half">
                                 <div className="right-column">
                                     <p className="step-food is-vcentered">{this.title}</p> <p style={{fontSize: "calc(1.4em + .05vw)",fontWeight:"normal"}}className="step-food">Time: {Math.floor(this.time/60) > 0 ? `${Math.floor(this.time/60)} hrs` : ''} {this.time % 60} mins | {this.calories} calories</p><hr style={{borderTop: "4px solid black"}}></hr>
