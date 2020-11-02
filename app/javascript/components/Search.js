@@ -14,8 +14,8 @@ export default class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {isRenderFilter: false};
-        this.state = {loading: true};
         this.state = {searchResults: null};
+        this.state = {loading: true};
         this.state = {toSerach: ''};
         this.state = {reloadHelper: this.props.match.params.recipe};
 
@@ -88,10 +88,7 @@ export default class Search extends React.Component {
                         <div className="container">
                             {this.state.isRenderFilter ? <Filter/> : ''}
                         </div>
-                        {/*Shows loading if the api call hasn't finished or if the api returned nothing*/
-                        this.state.loading || this.state.searchResults == null ? 
-                        <div>loading...</div> : 
-                        <this.displaySearchResults />}
+                        {<this.displaySearchResults />}
                     </div>
                 </section>
             </div>
@@ -99,10 +96,18 @@ export default class Search extends React.Component {
     }
     
     displaySearchResults() {
-        return (
-            <div className="columns is-multiline search-grid">
-                {this.state.searchResults}
-            </div>);
+        if(this.state.searchResults == null) {
+            return <div>loading...</div>;
+        }
+        else if(this.state.searchResults.length == 0) {
+            return <div>No Results Found</div>;
+        }
+        else { 
+            return (
+                <div className="columns is-multiline search-grid">
+                    {this.state.searchResults}
+                </div>);
+        }
     }
 
     renderFilter(){
