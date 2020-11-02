@@ -1,16 +1,20 @@
 import axios from "axios";
+import "./Globals";
 
 export default class SearchRecipe {
     constructor(query) {
         this.query = query;
         this.response;
         this.parsedValue = [];
+
+        
+        console.log(global.config.API_KEY);
     }
 
     async getSearchResult() {
         this.query.replace(" ", "+"); //The API needs multiple word search in the [word1]+[word2]+[word...] format
 
-        await axios.get("https://api.spoonacular.com/recipes/complexSearch?=&number=20&apiKey=0a7373376120478498c58837be29c272&addRecipeInformation=true&addRecipeNutrition=true&instructionsRequired=true&query=" + this.query) 
+        await axios.get(`https://api.spoonacular.com/recipes/complexSearch?=&number=20&apiKey=${global.config.API_KEY}&addRecipeInformation=true&addRecipeNutrition=true&instructionsRequired=true&query=${this.query}`) 
         .then ( response => {
             this.response = response.data;
         })

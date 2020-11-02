@@ -8,7 +8,7 @@ export default class Home extends React.Component {
         
         this.state = {toSerach: ''}
 
-
+        console.log(global.config.API_KEY);
     }
 
     handleSearchChange = (event) => {

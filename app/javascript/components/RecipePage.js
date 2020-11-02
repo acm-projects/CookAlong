@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import InstructionsQuery from "./InstructionQuery.mjs"
+import InstructionsQuery from "./InstructionQuery"
 import {Link} from "react-router-dom";
 import '../../assets/stylesheets/recipe-page.scss';
 
@@ -9,7 +9,7 @@ export default class RecipePage extends React.Component {
     constructor(props) {
         super(props);
         
-        this.image = "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=706&q=80";
+        this.image = global.config.LOADING_IMAGE;
         this.recipeTitle = "loading...";
         this.time = "loading...";
         this.numIngredients = "loading...";

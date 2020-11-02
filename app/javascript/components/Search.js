@@ -1,7 +1,7 @@
 import React from "react";
 import SearchResult from "./SearchResult";
 import Filter from "./Filter"
-import SearchRecipe from "./SearchQuery.mjs"
+import SearchRecipe from "./SearchQuery"
 import {Link, Route, Router} from 'react-router-dom'
 import { Button } from "react-bulma-components"
 
