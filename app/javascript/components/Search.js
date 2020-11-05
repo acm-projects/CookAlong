@@ -1,9 +1,10 @@
 import React from "react";
 import SearchResult from "./SearchResult";
 import Filter from "./Filter"
-import SearchRecipe from "./SearchQuery.mjs"
+import SearchRecipe from "./SearchQuery"
 import {Link, Route, Router} from 'react-router-dom'
 import { Button } from "react-bulma-components"
+import "./Globals";
 
 /*
 Props:
@@ -14,15 +15,17 @@ export default class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {isRenderFilter: false};
-        this.state = {loading: true};
         this.state = {searchResults: null};
+        this.state = {loading: true};
         this.state = {toSerach: ''};
         this.state = {reloadHelper: this.props.match.params.recipe};
+        this.resultsToGet = global.config.RESULTS_PER_CALL;
 
         this.renderFilter = this.renderFilter.bind(this);
         this.displaySearchResults = this.displaySearchResults.bind(this);
         this.handleSearchChange = this.handleSearchChange.bind(this);
         this.searchSubmit = this.searchSubmit.bind(this);
+        this.loadMoreResults = this.loadMoreResults.bind(this);
     }
     
     handleSearchChange = (event) => {
@@ -39,10 +42,20 @@ export default class Search extends React.Component {
     //this needs to be async so I can use asynchronous code for API calls. 
     //If I don't do this the API call wouldn't finish before the method would return
     async componentDidMount() {
-        this.searchObject = new SearchRecipe(this.props.match.params.recipe);
+        this.resultsToGet = global.config.RESULTS_PER_CALL;
+        this.searchObject = new SearchRecipe(this.props.match.params.recipe, global.config.RESULTS_PER_CALL);
         await this.searchObject.getSearchResult();
         const testObj = await this.searchObject.parse();
         const listResults = testObj.map((result) => <SearchResult recipeID={result.recipeID} name={result.name} key={result.name} calories={result.calories} time={result.time} imgUrl={result.imgUrl}/>)
+        this.setState({searchResults: listResults});
+    }
+
+    async loadMoreResults() {
+        this.resultsToGet += global.config.RESULTS_PER_CALL;
+        this.searchObject = new SearchRecipe(this.props.match.params.recipe, this.resultsToGet);
+        await this.searchObject.getSearchResult();
+        const testObj = await this.searchObject.parse();
+        var listResults = testObj.map((result) => <SearchResult recipeID={result.recipeID} name={result.name} key={result.name} calories={result.calories} time={result.time} imgUrl={result.imgUrl}/>)
         this.setState({searchResults: listResults});
     }
 
@@ -81,28 +94,36 @@ export default class Search extends React.Component {
                                     <a className="navbar-item" onClick={this.renderFilter}>Filter</a>
                                 </div>
                                 <div className="navbar-end">
-                                    <p className="navbar-item"> {this.props.numFound} recipes found relating to: {this.props.searchResult}</p>
+                                    <p className="navbar-item"> {this.props.numFound} recipes found relating to: {this.props.match.params.recipe}</p>
                                 </div>
                             </nav>
                         </div>
                         <div className="container">
                             {this.state.isRenderFilter ? <Filter/> : ''}
                         </div>
-                        {/*Shows loading if the api call hasn't finished or if the api returned nothing*/
-                        this.state.loading || this.state.searchResults == null ? 
-                        <div>loading...</div> : 
-                        <this.displaySearchResults />}
+                        {<this.displaySearchResults />}
                     </div>
                 </section>
+                <div class="box has-text-centered">
+                    <Button className="home-button" color="light" onClick={this.loadMoreResults}>Load More Results</Button>
+                </div>
             </div>
         );
     }
     
     displaySearchResults() {
-        return (
-            <div className="columns is-multiline search-grid">
-                {this.state.searchResults}
-            </div>);
+        if(this.state.searchResults == null) {
+            return <div>loading...</div>;
+        }
+        else if(this.state.searchResults.length == 0) {
+            return <div>No Results Found</div>;
+        }
+        else { 
+            return (
+                <div className="columns is-multiline search-grid">
+                    {this.state.searchResults}
+                </div>);
+        }
     }
 
     renderFilter(){

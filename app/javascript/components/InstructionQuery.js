@@ -1,4 +1,5 @@
 import axios from "axios";
+import "./Globals";
 
 export default class InstructionsQuery {
     constructor(query) {
@@ -8,7 +9,7 @@ export default class InstructionsQuery {
     }
 
     async getSearchResult() {
-        await axios.get(`https://api.spoonacular.com/recipes/${this.query}/information?includeNutrition=true&apiKey=0a7373376120478498c58837be29c272`) 
+        await axios.get(`https://api.spoonacular.com/recipes/${this.query}/information?includeNutrition=true&apiKey=${global.config.API_KEY}`) 
         .then ( response => {
             this.response = response.data;
         })

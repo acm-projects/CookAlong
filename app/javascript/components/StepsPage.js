@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import InstructionsQuery from "./InstructionQuery.mjs"
+import InstructionsQuery from "./InstructionQuery"
+import Header from './Header';
 /*  props:
         title: food name
         currStep: step number
@@ -23,7 +24,7 @@ export default class StepsPage extends React.Component {
         this.stepDescription = "Loading...";
         this.time = 0;
         this.calories = 0;
-        this.image = "";
+        this.image = global.config.LOADING_IMAGE;
         this.directions = ["Loading..."];
 
         this.recipeID = this.props.match.params.id;
@@ -78,6 +79,7 @@ export default class StepsPage extends React.Component {
     render() {
         return(
             <section className="hero is-dark is-fullheight hero-parent">
+                <div><Header /></div>
                 <div className="steps-bg"></div>
                 <div className="hero-body mx-0 my-0 px-0 py-0" >
                     <div className="container columns is-fluid is-centered mx-4 my-0 px-1 py-0">
