@@ -73,21 +73,21 @@ export default class Search extends React.Component {
                     </div>
                 </div>
             </nav>
-                <section className="columns search-page"  style={{paddingLeft: "5vw",paddingRight: "5vw"}}>
+                <section className="columns search-page"  style={{paddingLeft: "5vw",paddingRight: "5vw",display: "flex"}}>
                     <div className="column has-text-centered">
                         <div className="filter-bar">
                             <nav className="navbar filter-bar">
-                                <div className="navbar-brand">
+                                {/*<div className="navbar-brand">
                                     <a className="navbar-item" onClick={this.renderFilter}>Filter</a>
                                 </div>
                                 <div className="navbar-end">
                                     <p className="navbar-item"> {this.props.numFound} recipes found relating to: {this.props.searchResult}</p>
-                                </div>
+                                </div> */}
                             </nav>
                         </div>
                         <div className="container">
                             {this.state.isRenderFilter ? <Filter/> : ''}
-                        </div>
+                         </div>
                         {/*Shows loading if the api call hasn't finished or if the api returned nothing*/
                         this.state.loading || this.state.searchResults == null ? 
                         <div>loading...</div> : 
