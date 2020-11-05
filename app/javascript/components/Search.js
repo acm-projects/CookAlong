@@ -4,6 +4,7 @@ import Filter from "./Filter"
 import SearchRecipe from "./SearchQuery"
 import {Link, Route, Router} from 'react-router-dom'
 import { Button } from "react-bulma-components"
+import "./Globals";
 
 /*
 Props:
@@ -18,11 +19,13 @@ export default class Search extends React.Component {
         this.state = {loading: true};
         this.state = {toSerach: ''};
         this.state = {reloadHelper: this.props.match.params.recipe};
+        this.resultsToGet = global.config.RESULTS_PER_CALL;
 
         this.renderFilter = this.renderFilter.bind(this);
         this.displaySearchResults = this.displaySearchResults.bind(this);
         this.handleSearchChange = this.handleSearchChange.bind(this);
         this.searchSubmit = this.searchSubmit.bind(this);
+        this.loadMoreResults = this.loadMoreResults.bind(this);
     }
     
     handleSearchChange = (event) => {
@@ -39,10 +42,20 @@ export default class Search extends React.Component {
     //this needs to be async so I can use asynchronous code for API calls. 
     //If I don't do this the API call wouldn't finish before the method would return
     async componentDidMount() {
-        this.searchObject = new SearchRecipe(this.props.match.params.recipe);
+        this.resultsToGet = global.config.RESULTS_PER_CALL;
+        this.searchObject = new SearchRecipe(this.props.match.params.recipe, global.config.RESULTS_PER_CALL);
         await this.searchObject.getSearchResult();
         const testObj = await this.searchObject.parse();
         const listResults = testObj.map((result) => <SearchResult recipeID={result.recipeID} name={result.name} key={result.name} calories={result.calories} time={result.time} imgUrl={result.imgUrl}/>)
+        this.setState({searchResults: listResults});
+    }
+
+    async loadMoreResults() {
+        this.resultsToGet += global.config.RESULTS_PER_CALL;
+        this.searchObject = new SearchRecipe(this.props.match.params.recipe, this.resultsToGet);
+        await this.searchObject.getSearchResult();
+        const testObj = await this.searchObject.parse();
+        var listResults = testObj.map((result) => <SearchResult recipeID={result.recipeID} name={result.name} key={result.name} calories={result.calories} time={result.time} imgUrl={result.imgUrl}/>)
         this.setState({searchResults: listResults});
     }
 
@@ -91,6 +104,9 @@ export default class Search extends React.Component {
                         {<this.displaySearchResults />}
                     </div>
                 </section>
+                <div class="box has-text-centered">
+                    <Button className="home-button" color="light" onClick={this.loadMoreResults}>Load More Results</Button>
+                </div>
             </div>
         );
     }
