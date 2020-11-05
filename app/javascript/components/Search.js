@@ -94,7 +94,7 @@ export default class Search extends React.Component {
                                     <a className="navbar-item" onClick={this.renderFilter}>Filter</a>
                                 </div>
                                 <div className="navbar-end">
-                                    <p className="navbar-item"> {this.props.numFound} recipes found relating to: {this.props.searchResult}</p>
+                                    <p className="navbar-item"> {this.props.numFound} recipes found relating to: {this.props.match.params.recipe}</p>
                                 </div>
                             </nav>
                         </div>
