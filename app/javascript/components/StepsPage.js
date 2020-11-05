@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import Header from "./Header";
-import InstructionsQuery from "./InstructionQuery.mjs"
+import InstructionsQuery from "./InstructionQuery.js"
 import "../../assets/stylesheets/header.scss"
 /*  props:
         title: food name
