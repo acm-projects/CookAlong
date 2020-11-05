@@ -1,7 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import InstructionsQuery from "./InstructionQuery"
-import Header from './Header';
+import Header from "./Header";
+import InstructionsQuery from "./InstructionQuery.mjs"
+import "../../assets/stylesheets/header.scss"
 /*  props:
         title: food name
         currStep: step number
@@ -26,6 +27,8 @@ export default class StepsPage extends React.Component {
         this.calories = 0;
         this.image = global.config.LOADING_IMAGE;
         this.directions = ["Loading..."];
+        this.ingredients = ["Loading..."];
+        this.renderedIngredients = null;
 
         this.recipeID = this.props.match.params.id;
 
@@ -44,7 +47,8 @@ export default class StepsPage extends React.Component {
         this.image = recipeInfo["image"];
         this.time = recipeInfo["time"];
         this.calories = recipeInfo["numCalories"];
-
+        this.ingredients = recipeInfo["ingredients"];
+        this.renderedIngredients = () => this.renderedIngredients;
         this.directions = recipeInfo["directions"];
 
         this.setState({loading: false});
@@ -53,8 +57,9 @@ export default class StepsPage extends React.Component {
         textToSpeech.speak(utter);
     }
 
-    componentDidUpdate(){
-        
+    renderIngredients(){
+        let ingredients = this.ingredients.map((ingredient) => {return <div className="box"><article className="media"><div className="media-content"><p><strong>{ingredient}</strong></p></div></article></div>});
+        return ingredients;
     }
 
     rightButtonPressed() {
@@ -78,16 +83,18 @@ export default class StepsPage extends React.Component {
 
     render() {
         return(
-            <section className="hero is-dark is-fullheight hero-parent">
-                <div><Header /></div>
+            <section className="hero is-dark is-fullheight hero-parent disable-scrollbars">
+                <Header />
                 <div className="steps-bg"></div>
                 <div className="hero-body mx-0 my-0 px-0 py-0" >
                     <div className="container columns is-fluid is-centered mx-4 my-0 px-1 py-0">
                         <div className="steps-page columns is-gapless">
                         <div className="steps-button">
-                            <Link to="/"><button class="button is-rounded is-medium">Home</button></Link>
                         </div>
-                            <img className="step-image column is-half is-hidden-touch is-square" src={this.image}></img>
+                            <div className="column is-half">
+                                <img className="step-image is-hidden-touch is-square" src={this.image}></img>
+                                <div className="ingredient-list is-hidden-touch columns is-multiline disable-scrollbars">{this.ingredients.map((ingredient) => {return <div className="box column is-four-fifths"><article className="media"><div className="media-content"><p><strong>{ingredient}</strong></p></div></article></div>})}</div>
+                            </div>
                             <div className="column is-half">
                                 <div className="right-column">
                                     <p className="step-food is-vcentered">{this.title}</p> <p style={{fontSize: "calc(1.4em + .05vw)",fontWeight:"normal"}}className="step-food">Time: {Math.floor(this.time/60) > 0 ? `${Math.floor(this.time/60)} hrs` : ''} {this.time % 60} mins | {this.calories} calories</p><hr style={{borderTop: "4px solid black"}}></hr>
