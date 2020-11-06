@@ -1,8 +1,7 @@
-import React from 'react'; 
-import "../../assets/stylesheets/timer.scss";   
+import React from 'react';  
 
 export default class TimerInput extends React.Component {
-    render() {  
+    render() {      
         return (
             <div class="display-timer">  
                 <div class="field is-grouped is-grouped-right time-input">
@@ -13,6 +12,6 @@ export default class TimerInput extends React.Component {
                     <button class="button reset" onClick={this.props.resetCountDown}>RESET</button> 
                 </div>
             </div>    
-        );  
+        );    
     }
 }

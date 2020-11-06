@@ -216,7 +216,6 @@ button {
 		bottom: 5%;
 	}
 }
-
 .ingredient-list {
 	z-index: 1000;
 	top: 5%;
@@ -233,3 +232,16 @@ button {
 	object-position: center center;
 	transform: scale(1.25);
 }
+
+// TIMER 
+.timer-component {
+	position: absolute;
+	z-index: 100;
+	left: 5%;
+	bottom: 5%;
+	@include until($desktop){
+		top: 75%;
+		bottom: 5%;
+	}
+
+} 

@@ -84,7 +84,7 @@ export default class RecipePage extends React.Component {
                                                     <span class="icon is-small clock">
                                                         <i class="far fa-clock"></i>
                                                     </span>
-                                                    <span class="is-size-4-desktop is-size-5-tablet is-size-6-mobile has-text-weight-normal recipe-time">{this.time}</span>
+                                                    <span class="is-size-4-desktop is-size-5-tablet is-size-6-mobile has-text-weight-normal recipe-time">{this.time} minutes</span>
                                                 </div>
                                             </div>
                                             <div class="overview-more-info">

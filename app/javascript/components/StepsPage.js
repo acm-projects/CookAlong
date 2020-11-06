@@ -3,7 +3,10 @@ import {Link} from "react-router-dom";
 import Header from "./Header";
 import InstructionsQuery from "./InstructionQuery.js";
 import Timer from "./Timer.js";
-import "../../assets/stylesheets/header.scss";
+
+//import "../../assets/stylesheets/timer.scss";
+//import "../../assets/stylesheets/header.scss";
+//import "../../assets/stylesheets/timer.scss";
 /*  props:
         title: food name
         currStep: step number
@@ -94,8 +97,7 @@ export default class StepsPage extends React.Component {
                             <div className="column is-half">
                                 <img className="step-image is-hidden-touch is-square" src={this.image}></img>
                                 <div className="ingredient-list is-hidden-touch columns is-multiline disable-scrollbars">{this.ingredients.map((ingredient) => {return <div className="box column is-four-fifths"><article className="media"><div className="media-content"><p><strong>{ingredient}</strong></p></div></article></div>})}</div>
-                                <Timer />
-                            </div>
+                            </div> 
                             <div className="column is-half">
                                 <div className="right-column">
                                     <p className="step-food is-vcentered">{this.title}</p> <p style={{fontSize: "calc(1.4em + .05vw)",fontWeight:"normal"}}className="step-food">Time: {Math.floor(this.time/60) > 0 ? `${Math.floor(this.time/60)} hrs` : ''} {this.time % 60} mins | {this.calories} calories</p><hr style={{borderTop: "4px solid black"}}></hr>
@@ -103,6 +105,9 @@ export default class StepsPage extends React.Component {
                                     <p className="step-steps has-text-centered" style={{fontWeight: "normal"}}>{this.directions[this.state.currentStep-1]}</p>
                                 </div>
                             </div>
+                        </div>
+                        <div className="timer-component">
+                            <Timer />
                         </div>
                         <div className="left-arrow">
                         <button class="button is-large is-rounded" onClick={this.leftButtonPressed}>

@@ -1,12 +1,11 @@
 import React, { Component, useState } from 'react';
-import "../../assets/stylesheets/timer.scss";   
+//import "../../assets/stylesheets/timer.scss";
 import ReactDOM from 'react-dom';
-
 import TimerInput from './TimerInput';
- 
+  
 export default class Timer extends React.Component { 
     constructor(props) {
-        super(props);
+        super(props);
         this.state = {
             seconds: '00',
             minutes: '00', 
@@ -44,7 +43,7 @@ export default class Timer extends React.Component { 
     }
 
     handleChangeMinutes(event) {
-        if(!this.state.active){
+        if(!this.state.active){
             let minStr = "";
             if(event.target.value < 10)
             {
