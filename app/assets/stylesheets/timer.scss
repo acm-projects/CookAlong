@@ -5,45 +5,45 @@
 $montserrat: 'Montserrat', sans-serif;
 
 .timer-container {
-    background-color: #F0EFEB;
-    color: black;
-    font-family: $montserrat;
-    margin: 0.25vw;
-    padding: 1vw;
-    border-radius: 1vw;
+    background-color: #F0EFEB;
+    color: black;
+    font-family: $montserrat;
+    margin: 0.25vw;
+    padding: 1vw;
+    border-radius: 1vw;
 }
 
 .countdown-display {
-    padding-right: 1vw;
-    min-width: 9vw;
-    max-width: 9vw;
+    padding-right: 1vw;
+    min-width: 9vw;
+    max-width: 9vw;
 }
 
 .minutes-input {
-    margin-right: 0.2vw;
-    margin-top: 0.5vw;
+    margin-right: 0.2vw;
+    margin-top: 0.5vw;
 }
 
 .seconds-input {
-    margin-right: 1vw;
-    margin-top: 0.5vw;
+    margin-right: 1vw;
+    margin-top: 0.5vw;
 }
 
 .start-stop {
-    margin-top: 0.5vw;
-    margin-right: 0.2vw;
-    font-family: $montserrat;
-    background-color: #EFB694 !important;
-    color: white !important; 
-    font-weight: bold;
+    margin-top: 0.5vw;
+    margin-right: 0.2vw;
+    font-family: $montserrat;
+    background-color: #EFB694 !important;
+    color: white !important;
+    font-weight: bold;
 }
 
 .reset {
-    color: #EFB694 !important;
-    background-color: white !important;
-    font-family: $montserrat;
-    font-weight: bold;
-    margin-top: 0.5vw;
+    color: #EFB694 !important;
+    background-color: white !important;
+    font-family: $montserrat;
+    font-weight: bold;
+    margin-top: 0.5vw;
 }
 
 /*

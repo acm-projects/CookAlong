@@ -1,4 +1,5 @@
 import React from 'react'; 
+import "../../assets/stylesheets/timer.scss";   
 
 export default class TimerInput extends React.Component {
     render() {  
@@ -12,6 +13,6 @@ export default class TimerInput extends React.Component {
                     <button class="button reset" onClick={this.props.resetCountDown}>RESET</button> 
                 </div>
             </div>    
-        ); 
+        );  
     }
 }

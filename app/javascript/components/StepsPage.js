@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Header from "./Header";
 import InstructionsQuery from "./InstructionQuery.js";
-//import Timer from "./Timer.js";
+import Timer from "./Timer.js";
 import "../../assets/stylesheets/header.scss";
 /*  props:
         title: food name
@@ -91,12 +91,10 @@ export default class StepsPage extends React.Component {
                     <div className="container columns is-fluid is-centered mx-4 my-0 px-1 py-0">
                         <div className="steps-page columns is-gapless">
                             <div className="steps-button"></div>
-                            {/*<div className="timer-component">
-                                <Timer />
-                            </div>  */}
                             <div className="column is-half">
                                 <img className="step-image is-hidden-touch is-square" src={this.image}></img>
                                 <div className="ingredient-list is-hidden-touch columns is-multiline disable-scrollbars">{this.ingredients.map((ingredient) => {return <div className="box column is-four-fifths"><article className="media"><div className="media-content"><p><strong>{ingredient}</strong></p></div></article></div>})}</div>
+                                <Timer />
                             </div>
                             <div className="column is-half">
                                 <div className="right-column">
