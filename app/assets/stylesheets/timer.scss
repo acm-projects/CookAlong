@@ -1,74 +1,51 @@
 @import 'bulma';
 @import "../../../node_modules/bulma/bulma.sass";
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 $montserrat: 'Montserrat', sans-serif;
 
-.timer-container {
-    background-color: #F0EFEB;
-    color: black;
-    font-family: $montserrat;
-    margin: 0.25vw;
-    padding: 1vw;
-    border-radius: 1vw;
+// TIMER 
+/*
+.timer-component {
+    color: black;
+    font-family: $montserrat;
+	position: absolute;
+	z-index: 100;
+	left: 5%;
+	bottom: 5%;
+	@include until($desktop) {
+		top: 75%;
+		bottom: 5%;
+	}
+} 
+
+.timer-container {
+    background-color: #F0EFEB;
+    max-width: 30vw;
+    padding: 2vw;
+    border-radius: 1vw;
+}
+
+.minutes-input {
+    width: 0.25vw;
+    margin: 0.5vw;
 }
 
 .countdown-display {
-    padding-right: 1vw;
-    min-width: 9vw;
-    max-width: 9vw;
-}
-
-.minutes-input {
-    margin-right: 0.2vw;
-    margin-top: 0.5vw;
-}
-
-.seconds-input {
-    margin-right: 1vw;
-    margin-top: 0.5vw;
-}
-
-.start-stop {
-    margin-top: 0.5vw;
-    margin-right: 0.2vw;
-    font-family: $montserrat;
-    background-color: #EFB694 !important;
-    color: white !important;
-    font-weight: bold;
-}
-
-.reset {
-    color: #EFB694 !important;
-    background-color: white !important;
     font-family: $montserrat;
     font-weight: bold;
-    margin-top: 0.5vw;
-}
-
-/*
-.timer-container {
-    background-color: #F0EFEB;
-    max-width: 30vw;
-    padding: 2vw;
-    border-radius: 1vw;
-    color: black;
-}
-
-.countdown-display {
-    font-family: $montserrat;
-    font-weight: bold;
-    color: black;
+    color: black;
 }
 
 .time-input {
-    font-family: $montserrat;
-    padding: 1vw;
+    font-family: $montserrat;
+    padding: 1vw;
 }
 
 .minutes-input {
-    width: 1vw;
-    margin: 0.5vw;
+    width: 1vw;
+    margin: 0.5vw;
 }
 
 .seconds-input {
@@ -121,3 +98,47 @@ $montserrat: 'Montserrat', sans-serif;
     background-color: rgb(252, 252, 252);
 }
 */
+
+.timer-container {
+    background-color: #F0EFEB;
+    color: black;
+    font-family: $montserrat;
+    margin: 0.25vw;
+    padding: 1vw;
+    border-radius: 1vw;
+}
+
+.countdown-display {
+    padding-right: 1vw;
+    min-width: 9vw;
+    max-width: 9vw;
+}
+
+.minutes-input {
+    margin-right: 0.2vw;
+    margin-top: 0.5vw;
+}
+
+.seconds-input {
+    margin-right: 1vw;
+    margin-top: 0.5vw;
+}
+
+.start-stop {
+    margin-top: 0.5vw;
+    margin-right: 0.2vw;
+    font-family: $montserrat;
+    background-color: #EFB694 !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+.reset {
+    color: #EFB694 !important;
+    background-color: white !important;
+    font-family: $montserrat;
+    font-weight: bold;
+    margin-top: 0.5vw;
+}
+ 
+

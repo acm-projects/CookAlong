@@ -1,6 +1,7 @@
 $card-content-padding: .5rem;
 
 @import 'bulma';
+@import "../../../node_modules/bulma/bulma.sass";
 @import url('//fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Open+Sans:wght@100&display=swap');
 
 $montserrat: 'Montserrat', sans-serif;
@@ -222,7 +223,7 @@ button {
 	margin-top: 5%;
 	padding-left: 8%;
 	overflow:auto;
-	max-height: 70%;
+	max-height: 30%;
 	width: 45%;
 	position: absolute;
 }
@@ -233,15 +234,38 @@ button {
 	transform: scale(1.25);
 }
 
-// TIMER 
+// TIMER
 .timer-component {
+    color: black;
+    font-family: $montserrat;
 	position: absolute;
 	z-index: 100;
 	left: 5%;
-	bottom: 5%;
-	@include until($desktop){
+	bottom: 3%;
+	@include until($desktop) {
 		top: 75%;
 		bottom: 5%;
 	}
-
 } 
+
+.timer-container {
+    background-color: #F0EFEB;
+    max-width: 40vw;
+    padding: 2vw;
+    border-radius: 1vw;
+}
+
+.countdown-display {
+	font-family: $montserrat;
+	font-weight: bold;
+	font-size: 3vw;
+	padding: 0vw;
+	min-width: 9vw;
+	max-width: 9vw;
+}
+
+.timer-container input {
+	width: 5.5vw;
+	padding: 1vw;
+	margin: 0.5vw;
+}

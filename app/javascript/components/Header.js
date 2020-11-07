@@ -5,10 +5,10 @@ import { Button } from "react-bulma-components"
 
 export class Header extends React.Component {
     constructor(props) {
-        super(props);
+        super(props);   
         
         this.state = {toSerach: ''}
-        
+         
         this.formSubmitted = false;
 
         this.handleSearchChange = this.handleSearchChange.bind(this);

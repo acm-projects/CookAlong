@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
-//import "../../assets/stylesheets/timer.scss";
 import ReactDOM from 'react-dom';
 import TimerInput from './TimerInput';
+import "../../assets/stylesheets/timer.scss";
   
 export default class Timer extends React.Component { 
     constructor(props) {
@@ -70,10 +70,10 @@ export default class Timer extends React.Component { 
             this.setState({
                 seconds: secStr,
                 inputSeconds: secStr
-            });
+            }); 
         }
     }
-
+          
     tick() {
         var min = Math.floor(this.secondsRemaining / 60);
         var sec = this.secondsRemaining - (min * 60);
@@ -100,7 +100,7 @@ export default class Timer extends React.Component { 
             this.setState({
                 finished: true,
             });
-            this.playAudio();
+            this.playAudio();  
         }
 
         this.secondsRemaining--;
@@ -160,17 +160,17 @@ export default class Timer extends React.Component { 
             firstTime: true,
         });
         if(this.state.finished) {
-            this.pauseAudio();
+            this.pauseAudio(); 
         }
     }
 
     render() {
-        return (  
+        return (   
             <div>
                 <audio className="audio-element" loop>
                     <source src="https://assets.coderrocketfuel.com/pomodoro-times-up.mp3"></source>
                 </audio>
-                <div class="timer-container">
+                <div class="timer-container">  
                     <TimerInput minutes={this.state.minutes}     
                                 seconds={this.state.seconds}
                                 inputMinutes={this.state.inputMinutes}

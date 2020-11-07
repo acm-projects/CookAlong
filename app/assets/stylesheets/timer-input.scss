@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+$montserrat: 'Montserrat', sans-serif;
+
+.countdown-display {
+    padding-right: 1vw;
+    min-width: 9vw;
+    max-width: 9vw;
+}
+
+.minutes-input {
+    margin-right: 0.2vw;
+    margin-top: 0.5vw;
+}
+
+.seconds-input {
+    margin-right: 1vw;
+    margin-top: 0.5vw;
+}
+
+.start-stop {
+    margin-top: 0.5vw;
+    margin-right: 0.2vw;
+    font-family: $montserrat;
+    background-color: #EFB694 !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+.reset {
+    color: #EFB694 !important;
+    background-color: white !important;
+    font-family: $montserrat;
+    font-weight: bold;
+    margin-top: 0.5vw;
+}

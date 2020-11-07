@@ -1,13 +1,10 @@
 import React from "react";
+//import Header from "./Header";   
 import {Link} from "react-router-dom";
-import Header from "./Header";
 import InstructionsQuery from "./InstructionQuery.js";
-import Timer from "./Timer.js";
-
-//import "../../assets/stylesheets/timer.scss";
-//import "../../assets/stylesheets/header.scss";
-//import "../../assets/stylesheets/timer.scss";
-/*  props:
+import Timer from "./Timer.js";          
+    
+/*  props:  
         title: food name
         currStep: step number
         numSteps: total number of steps
@@ -64,7 +61,7 @@ export default class StepsPage extends React.Component {
     renderIngredients(){
         let ingredients = this.ingredients.map((ingredient) => {return <div className="box"><article className="media"><div className="media-content"><p><strong>{ingredient}</strong></p></div></article></div>});
         return ingredients;
-    }
+    } 
 
     rightButtonPressed() {
         if(this.state.currentStep < this.numSteps) {
@@ -88,7 +85,7 @@ export default class StepsPage extends React.Component {
     render() {
         return(
             <section className="hero is-dark is-fullheight hero-parent disable-scrollbars">
-                <Header />
+                {/*<Header />*/}
                 <div className="steps-bg"></div>
                 <div className="hero-body mx-0 my-0 px-0 py-0" >
                     <div className="container columns is-fluid is-centered mx-4 my-0 px-1 py-0">
@@ -104,7 +101,7 @@ export default class StepsPage extends React.Component {
                                     <p className="step-food has-text-centered">Step {this.state.currentStep}/{this.numSteps}</p>
                                     <p className="step-steps has-text-centered" style={{fontWeight: "normal"}}>{this.directions[this.state.currentStep-1]}</p>
                                 </div>
-                            </div>
+                            </div>    
                         </div>
                         <div className="timer-component">
                             <Timer />
@@ -127,5 +124,6 @@ export default class StepsPage extends React.Component {
                 </div>
         </section>
         )
-    }
+    } 
 }
+         
