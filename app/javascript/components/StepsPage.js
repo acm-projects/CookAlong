@@ -23,7 +23,7 @@ speechRecognitionList.addFromString(grammar, 1);
 recognition.grammars = speechRecognitionList;
 recognition.lang = 'en-US';
 recognition.interimResults = false;
-recognition.continuous = false;
+recognition.continuous = true;
 
 export default class StepsPage extends React.Component {
     constructor(props){
@@ -44,6 +44,7 @@ export default class StepsPage extends React.Component {
 
         this.rightButtonPressed = this.rightButtonPressed.bind(this);
         this.leftButtonPressed = this.leftButtonPressed.bind(this);
+        this.micButtonPressed = this.micButtonPressed.bind(this);
     }
 
     async componentDidMount() {
@@ -69,9 +70,8 @@ export default class StepsPage extends React.Component {
     componentDidUpdate(){
         
     }
-    
+
     rightButtonPressed() {
-        recognition.start();
         if(this.state.currentStep < this.numSteps) {
             this.setState({currentStep: this.state.currentStep + 1}, () => this.speak(this.directions[this.state.currentStep-1]))
         }
@@ -83,24 +83,30 @@ export default class StepsPage extends React.Component {
         }
     }
 
+    micButtonPressed(){
+        recognition.start();
+        recognition.onresult = function(event) {
+            //var last = event.results.length - 1;
+            //var command = event.results[last][0].transcript;
+            var command = event.results[0][0].transcript;
+        
+            if(command.toLowerCase() === 'next'){
+                this.rightButtonPressed()
+            }
+            else if (command.toLowerCase() === 'back'){
+                this.leftButtonPressed()
+            }
+            else if (command.toLowerCase() === 'repeat'){
+                this.speak(this.directions[this.state.currentStep-1])
+            }
+        }
+    }
+
     speak(text){
         textToSpeech.cancel()
         let utter = new SpeechSynthesisUtterance(text);
         utter.rate = 1.5;
         textToSpeech.speak(utter);
-    }
-    speech(){
-        recognition.onresult = function(event) {
-            var last = event.results.length - 1;
-            var command = event.results[last][0].transcript;
-        
-            if(command.toLowerCase() === 'next step'){
-                rightButtonPressed();
-            }
-            else if (command.toLowerCase() === 'backstep'){
-                leftButtonPressed();
-            }
-        }
     }
 
     render() {
@@ -134,6 +140,13 @@ export default class StepsPage extends React.Component {
                             <button class="button is-large is-rounded" onClick={this.rightButtonPressed}>
                                 <span class="icon is-large">
                                     <i class="fas fa-arrow-right fa-lg"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div className="mic-but">
+                            <button class="button is-small is-rounded" onClick={this.micButtonPressed}>
+                                <span class="icon is-medium">
+                                    <i class="fas fa-microphone"></i>
                                 </span>
                             </button>
                         </div>
