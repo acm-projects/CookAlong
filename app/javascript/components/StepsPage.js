@@ -23,7 +23,7 @@ speechRecognitionList.addFromString(grammar, 1);
 recognition.grammars = speechRecognitionList;
 recognition.lang = 'en-US';
 recognition.interimResults = false;
-recognition.continuous = true;
+recognition.continuous = false;
 
 export default class StepsPage extends React.Component {
     constructor(props){
@@ -85,21 +85,22 @@ export default class StepsPage extends React.Component {
 
     micButtonPressed(){
         recognition.start();
-        recognition.onresult = function(event) {
+        recognition.onresult = (event) => {
             //var last = event.results.length - 1;
             //var command = event.results[last][0].transcript;
             var command = event.results[0][0].transcript;
         
             if(command.toLowerCase() === 'next'){
-                this.rightButtonPressed()
+                this.rightButtonPressed();
             }
             else if (command.toLowerCase() === 'back'){
                 this.leftButtonPressed()
             }
             else if (command.toLowerCase() === 'repeat'){
-                this.speak(this.directions[this.state.currentStep-1])
+                this.speak(this.directions[this.state.currentStep-1]);
             }
         }
+        recognition.onspeechend = () => recognition.stop();
     }
 
     speak(text){
@@ -107,6 +108,18 @@ export default class StepsPage extends React.Component {
         let utter = new SpeechSynthesisUtterance(text);
         utter.rate = 1.5;
         textToSpeech.speak(utter);
+
+        setTimeout(() => {
+            var clickEvent = new MouseEvent('click', {
+                view: window,
+                bubbles: true,
+                cancelable: true
+            });
+
+            var element = document.getElementById('mic');
+            var cancelled = !element.dispatchEvent(clickEvent);
+            
+        },1000)
     }
 
     render() {
