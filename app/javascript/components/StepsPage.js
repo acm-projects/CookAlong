@@ -23,7 +23,7 @@ speechRecognitionList.addFromString(grammar, 1);
 recognition.grammars = speechRecognitionList;
 recognition.lang = 'en-US';
 recognition.interimResults = false;
-recognition.continuous = true;
+recognition.continuous = false;
 
 export default class StepsPage extends React.Component {
     constructor(props){
@@ -65,6 +65,15 @@ export default class StepsPage extends React.Component {
 
         let utter = new SpeechSynthesisUtterance(this.directions[this.state.currentStep-1]);
         textToSpeech.speak(utter);
+
+        var clickEvent = new MouseEvent('click', {
+            view: window,
+            bubbles: true,
+            cancelable: true
+          });
+
+        var element = document.getElementById('mic');
+        var cancelled = !element.dispatchEvent(clickEvent);
     }
 
     componentDidUpdate(){
@@ -81,17 +90,19 @@ export default class StepsPage extends React.Component {
         if(this.state.currentStep > 1) {
             this.setState({currentStep: this.state.currentStep - 1}, () => this.speak(this.directions[this.state.currentStep-1]))
         }
+
     }
 
     micButtonPressed(){
         recognition.start();
-        recognition.onresult = function(event) {
+        recognition.onresult = (event) => {
             //var last = event.results.length - 1;
             //var command = event.results[last][0].transcript;
             var command = event.results[0][0].transcript;
-        
+            console.log(command)
             if(command.toLowerCase() === 'next'){
                 this.rightButtonPressed()
+                
             }
             else if (command.toLowerCase() === 'back'){
                 this.leftButtonPressed()
@@ -100,6 +111,7 @@ export default class StepsPage extends React.Component {
                 this.speak(this.directions[this.state.currentStep-1])
             }
         }
+        recognition.onspeechend = () => recognition.stop();
     }
 
     speak(text){
@@ -107,6 +119,19 @@ export default class StepsPage extends React.Component {
         let utter = new SpeechSynthesisUtterance(text);
         utter.rate = 1.5;
         textToSpeech.speak(utter);
+
+        // after step is said, wait 1 second and restart tts 
+        setTimeout(() => {
+            var clickEvent = new MouseEvent('click', {
+                view: window,
+                bubbles: true,
+                cancelable: true
+              });
+    
+            var element = document.getElementById('mic');
+            var cancelled = !element.dispatchEvent(clickEvent);
+            
+        },1000)
     }
 
     render() {
@@ -144,7 +169,7 @@ export default class StepsPage extends React.Component {
                             </button>
                         </div>
                         <div className="mic-but">
-                            <button class="button is-small is-rounded" onClick={this.micButtonPressed}>
+                            <button id="mic" style={{display: 'none'}} class="button is-small is-rounded" onClick={this.micButtonPressed}>
                                 <span class="icon is-medium">
                                     <i class="fas fa-microphone"></i>
                                 </span>
