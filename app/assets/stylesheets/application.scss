@@ -223,7 +223,7 @@ button {
 	margin-top: 5%;
 	padding-left: 8%;
 	overflow:auto;
-	max-height: 60%;
+	max-height: 68%;
 	width: 45%;
 	position: absolute;
 }
@@ -244,7 +244,7 @@ button {
 	left: 5%;
 	bottom: 3%;
 }
-
+/*
 .timer-container {
 	background-color: #F0EFEB;
 	border-radius: 1vw;
@@ -254,24 +254,29 @@ button {
 }
 
 .timer-container p{
-	//width: 0%;
-	//float: left;
+	width: 0%;
+	float: left;
 	min-width: 9vw;
 	max-width: 9vw;
+	//position: absolute;
+	//z-index: 100;
+	//left: 5%;
+	//bottom: 15%;
 }
 
 .timer-container input {
 	vertical-align: top;
-	width: 30%;
+	width: 33%;
 	float: left;
 	margin: 1vw;
 }
 
 .timer-container button {
-	//width: 14%;
+	width: 40%;
+
 	float: left;
 }
-
+*/
 /*
 .timer-container {
 	background-color: #F0EFEB;

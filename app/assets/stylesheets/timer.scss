@@ -1,50 +1,49 @@
 @import 'bulma';
 @import "../../../node_modules/bulma/bulma.sass";
+@import url('//fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Open+Sans:wght@100&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+$montserrat: 'Montserrat', sans-serif;
 
-$montserrat: 'Montserrat', sans-serif;
-
-.timer-container {
-    background-color: #F0EFEB;
-    color: black;
-    font-family: $montserrat;
-    margin: 0.25vw;
-    padding: 1vw;
-    border-radius: 1vw;
+.timer-container {
+    background-color: #F0EFEB;
+    color: black;
+    font-family: $montserrat;
+    margin: 0.25vw;
+    padding: 1vw;
+    border-radius: 1vw;
 }
 
-.countdown-display {
-    padding-right: 1vw;
-    min-width: 9vw;
-    max-width: 9vw;
+.countdown-display {
+    padding-right: 1vw;
+    min-width: 9vw;
+    max-width: 9vw;
 }
 
-.minutes-input {
-    margin-right: 0.2vw;
-    margin-top: 0.5vw;
+.minutes-input {
+    margin-right: 0.2vw;
+    margin-top: 0.5vw;
+    width: 30%;
 }
 
-.seconds-input {
-    margin-right: 1vw;
-    margin-top: 0.5vw;
+.seconds-input {
+    margin-right: 1vw;
+    margin-top: 0.5vw;
+    width: 30%;
 }
 
-.start-stop {
-    margin-top: 0.5vw;
-    margin-right: 0.2vw;
-    font-family: $montserrat;
-    background-color: #EFB694 !important;
-    color: white !important;
-    font-weight: bold;
+.start-stop {
+    margin-top: 0.5vw;
+    margin-right: 0.2vw;
+    font-family: $montserrat;
+    background-color: #EFB694;
+    color: white;
+    font-weight: bold;
 }
 
-.reset {
-    color: #EFB694 !important;
-    background-color: white !important;
-    font-family: $montserrat;
-    font-weight: bold;
-    margin-top: 0.5vw;
+.reset {
+    color: #EFB694;
+    background-color: white;
+    font-family: $montserrat;
+    font-weight: bold;
+    margin-top: 0.5vw;
 }
- 
-

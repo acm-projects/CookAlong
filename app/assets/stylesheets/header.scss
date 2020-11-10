@@ -5,14 +5,14 @@
 $montserrat: 'Montserrat', sans-serif;
 
 .navbar-header {
-    background-color: #B7B7A4;
+    background-color:/* #B7B7A4;*/ #CB997E !important;
     padding: 1vw;
 }
 
 .logo {
     font-family: $montserrat;
     font-weight: bold;
-    color: white;
+    color: white; 
 }
 
 .logo a {
