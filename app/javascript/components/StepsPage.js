@@ -104,7 +104,7 @@ export default class StepsPage extends React.Component {
                             </div>    
                         </div>
                         <div class="timer-component">
-                                    <Timer />
+                                    <Timer /> 
                         </div>
                         <div className="left-arrow">
                         <button class="button is-large is-rounded" onClick={this.leftButtonPressed}>

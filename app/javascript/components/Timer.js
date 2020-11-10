@@ -165,7 +165,7 @@ export default class Timer extends React.Component { 
         }
     }
 
-    render() { 
+    render() {  
         return (   
             <div>
                 <audio className="audio-element" loop>

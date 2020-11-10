@@ -35,15 +35,15 @@ export class Header extends React.Component {
                         <div className="navbar-item">
                             <form className="searchForm" onSubmit={location.reload}>
                                 <div className="field has-addons">
-                                    <div className="control has-icons-left">
+                                    <div className="control is-expanded has-icons-left">
                                         <input className="input input-search" type="text" placeholder="Search for recipes..." onChange={this.handleSearchChange} value={this.state.toSerach}></input>
                                         <span className="icon is-left">
                                             <i className="fas fa-search"></i>
-                                        </span>
-                                        <div className="control">
-                                            <Link to={"/search/" + this.state.toSerach}><Button className="button home-button" color="light">Search</Button></Link>
-                                        </div>   
+                                        </span>   
                                     </div>
+                                    <div className="control">
+                                            <Link to={"/search/" + this.state.toSerach}><Button className="button home-button" color="light">Search</Button></Link>
+                                    </div> 
                                 </div>
                             </form>
                         </div>
@@ -53,6 +53,5 @@ export class Header extends React.Component {
         )
     }
 }
-
 
 export default Header;

@@ -62,7 +62,7 @@ export default class Search extends React.Component {
     render() {
         return (
             <div>
-                <nav className="navbar navbar-header" role="navigation" aria-label="main navigation">
+            <nav className="navbar navbar-header" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand logo">
                     <Link to="/"><a className="navbar-item is-size-3-desktop is-size-3-tablet is-size-4-mobile">CookAlong</a></Link>
                 </div>
@@ -70,18 +70,19 @@ export default class Search extends React.Component {
                     <div className="navbar-start"></div>
                     <div className="navbar-end">
                         <div className="navbar-item">
-                            <div className="control has-icons-left">
-                            <form className="searchForm" onSubmit={this.searchSubmit()}>
-                                <div>
-                                    <input className="input input-search" type="text" placeholder="Search for recipes..."
-                                    onChange={this.handleSearchChange} value={this.state.toSerach}></input>
-                                    <Link to={{pathname: `${this.state.toSerach}`}}><Button className="home-button" color="light">Search</Button></Link>
+                            <form className="searchForm" onSubmit={location.reload}>
+                                <div className="field has-addons is-grouped">
+                                    <div className="control has-icons-left">
+                                        <input className="input input-search" type="text" placeholder="Search for recipes..." onChange={this.handleSearchChange} value={this.state.toSerach}></input>
+                                        <span className="icon is-left">
+                                            <i className="fas fa-search"></i>
+                                        </span>
+                                        <div className="control">
+                                            <Link to={{pathname: `${this.state.toSerach}`}}><Button className="button home-button" color="light">Search</Button></Link>
+                                        </div>   
+                                    </div>
                                 </div>
                             </form>
-                            <span className="icon is-left">
-                                <i className="fas fa-search"></i>
-                            </span>
-                            </div>
                         </div>
                     </div>
                 </div>

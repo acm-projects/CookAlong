@@ -2,7 +2,7 @@ import React from 'react'; 
 //import '../../assets/stylesheets/timer.scss';
      
 export default class TimerInput extends React.Component {
-    render() {                        
+    render() {                          
         return (   
     /*
             <div class="columns is-vcentered time-display"> 
