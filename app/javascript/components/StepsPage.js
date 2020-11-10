@@ -1,8 +1,8 @@
 import React from "react";
-//import Header from "./Header";   
+import Header from "./Header";   
 import {Link} from "react-router-dom";
 import InstructionsQuery from "./InstructionQuery.js";
-import Timer from "./Timer.js";          
+import Timer from "./Timer.js";                 
     
 /*  props:  
         title: food name
@@ -80,12 +80,12 @@ export default class StepsPage extends React.Component {
         let utter = new SpeechSynthesisUtterance(text);
         utter.rate = 1.5;
         textToSpeech.speak(utter);
-    }
+    } 
 
     render() {
         return(
             <section className="hero is-dark is-fullheight hero-parent disable-scrollbars">
-                {/*<Header />*/}
+                <Header />
                 <div className="steps-bg"></div>
                 <div className="hero-body mx-0 my-0 px-0 py-0" >
                     <div className="container columns is-fluid is-centered mx-4 my-0 px-1 py-0">
@@ -103,8 +103,8 @@ export default class StepsPage extends React.Component {
                                 </div>
                             </div>    
                         </div>
-                        <div className="timer-component">
-                            <Timer />
+                        <div class="timer-component">
+                                    <Timer />
                         </div>
                         <div className="left-arrow">
                         <button class="button is-large is-rounded" onClick={this.leftButtonPressed}>

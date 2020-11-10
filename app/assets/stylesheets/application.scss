@@ -223,7 +223,7 @@ button {
 	margin-top: 5%;
 	padding-left: 8%;
 	overflow:auto;
-	max-height: 30%;
+	max-height: 60%;
 	width: 45%;
 	position: absolute;
 }
@@ -235,6 +235,49 @@ button {
 }
 
 // TIMER
+
+.timer-component {
+	color: black;
+	font-family: $montserrat;
+	position: absolute;
+	z-index: 100;
+	left: 5%;
+	bottom: 3%;
+}
+
+.timer-container {
+	background-color: #F0EFEB;
+	border-radius: 1vw;
+	padding: 1vw;
+	min-width: 40vw;
+	max-width: 40vw;
+}
+
+.timer-container p{
+	//width: 0%;
+	//float: left;
+	min-width: 9vw;
+	max-width: 9vw;
+}
+
+.timer-container input {
+	vertical-align: top;
+	width: 30%;
+	float: left;
+	margin: 1vw;
+}
+
+.timer-container button {
+	//width: 14%;
+	float: left;
+}
+
+/*
+.timer-container {
+	background-color: #F0EFEB;
+}
+*/
+/*
 .timer-component {
     color: black;
     font-family: $montserrat;
@@ -248,6 +291,19 @@ button {
 	}
 } 
 
+.timer-container {
+	background-color: #F0EFEB;
+	font-family: $montserrat;
+	font-size: 2vw;
+	margin: 0vw;
+	padding: 0vw;
+}
+
+.timer-container input {
+	width: 10%;
+}
+*/
+/*
 .timer-container {
     background-color: #F0EFEB;
     max-width: 40vw;
@@ -269,3 +325,4 @@ button {
 	padding: 1vw;
 	margin: 0.5vw;
 }
+*/

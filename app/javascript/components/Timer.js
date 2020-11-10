@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import ReactDOM from 'react-dom';
 import TimerInput from './TimerInput';
-import "../../assets/stylesheets/timer.scss";
+//import "../../assets/stylesheets/timer.scss"; 
   
 export default class Timer extends React.Component { 
     constructor(props) {
@@ -35,7 +35,7 @@ export default class Timer extends React.Component { 
     playAudio() {
         const AudioEl = document.getElementsByClassName("audio-element")[0];
         AudioEl.play();
-    }
+    } 
 
     pauseAudio() {
         const AudioEl = document.getElementsByClassName("audio-element")[0];
