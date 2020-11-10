@@ -32,7 +32,7 @@ export class Header extends React.Component {
                 <div className="navbar-menu">
                     <div className="navbar-start"></div>
                     <div className="navbar-end">
-                        <div className="navbar-item">
+                        <div className="navbar-item"> 
                             <form className="searchForm" onSubmit={location.reload}>
                                 <div className="field has-addons">
                                     <div className="control is-expanded has-icons-left">

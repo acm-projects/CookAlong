@@ -123,13 +123,17 @@ export default class RecipePage extends React.Component {
                                 <div class="column is-three-fifths">
                                     <h2 class="subtitle is-size-3-desktop is-size-3-tablet is-size-4-mobile ingredients-title">Ingredients</h2>
                                 </div>
-                                <div class="column is-one-fifth">
+                                {/*<div class="column is-one-fifth">
                                     <div class="columns is-mobile units">
                                         <div class="column is-one-third us">
-                                            <a class="is-size-6-desktop is-size-6-tablet is-size-7-mobile has-text-weight-normal" href="javascript:void(0)">US</a>
+                                            <a class="is-size-6-desktop is-size-6-tablet is-size-7-mobile has-text-weight-normal" href="javascript:void(0)">Units: U.S.</a>
                                         </div>
-                                        <div class="column is-two-thirds metric">
-                                            <a class="is-size-6-desktop is-size-6-tablet is-size-7-mobile has-text-weight-normal" href="javascript:void(0)">METRIC</a>
+                                    </div>
+                                </div>*/}
+                                <div class="column is-one-fifth">
+                                    <div class="columns is-mobile units">
+                                        <div class="column">
+                                            <h6 class="is-size-6-desktop is-size-6-tablet is-size-7-mobile has-text-weight-normal us">UNITS: U.S.</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -138,13 +142,6 @@ export default class RecipePage extends React.Component {
                                         <div class="column">
                                             <h6 class="is-size-6-desktop is-size-6-tablet is-size-7-mobile has-text-weight-normal servings-text">SERVINGS: {this.servings}</h6>
                                         </div>                                                                           
-                                        {/*<div class="column is-one-third servings-input">
-                                            <div class="field">
-                                                <div class="control"> 
-                                                    <input class="input is-size-7-desktop is-size-7-tablet is-size-7-mobile is-small" type="text" placeholder={servings}/>
-                                                </div>
-                                            </div>
-                                        </div>*/}
                                     </div>
                                 </div>
                             </div>

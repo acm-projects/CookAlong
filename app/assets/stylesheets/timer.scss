@@ -36,12 +36,12 @@ $montserrat: 'Montserrat', sans-serif;
     margin-right: 0.2vw;
     font-family: $montserrat;
     background-color: #EFB694;
-    color: white;
+    color: white !important;
     font-weight: bold;
 }
 
 .reset {
-    color: #EFB694;
+    color: #EFB694 !important;
     background-color: white;
     font-family: $montserrat;
     font-weight: bold;
