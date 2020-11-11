@@ -70,7 +70,7 @@ export default class StepsPage extends React.Component {
 
         let utter = new SpeechSynthesisUtterance(this.directions[this.state.currentStep-1]);
         textToSpeech.speak(utter);
-
+        
         var clickEvent = new MouseEvent('click', {
             view: window,
             bubbles: true,
@@ -116,8 +116,24 @@ export default class StepsPage extends React.Component {
             else if (command.toLowerCase() === 'repeat'){
                 this.speak(this.directions[this.state.currentStep-1])
             }
+            else {
+                this.speak("command not recognized, please try again");
+            }
+            
         }
-        recognition.onspeechend = () => recognition.stop();
+        recognition.onsoundend = () => setTimeout(() => {
+            var clickEvent = new MouseEvent('click', {
+                view: window,
+                bubbles: true,
+                cancelable: true
+              });
+    
+            var element = document.getElementById('mic');
+            var cancelled = !element.dispatchEvent(clickEvent);
+            
+        },1000)
+
+
     }
 
     speak(text){
