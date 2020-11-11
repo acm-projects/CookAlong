@@ -29,7 +29,7 @@ export default class Home extends React.Component {
                             </div>
                             <div className="column is-full field has-addons has-addons-centered">
                                 <Link to={{pathname: `search/${this.state.toSerach}`}}><Button className="home-button" color="light">Search</Button></Link>
-                                <button className="home-button button is-light is-normal">Random Recipe</button>
+                                <Link to={{pathname: `search/random`}}><button className="home-button button is-light is-normal">Random Recipe</button></Link>
                             </div>
                         </form>
                     </div>

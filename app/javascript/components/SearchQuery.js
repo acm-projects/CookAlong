@@ -13,10 +13,18 @@ export default class SearchRecipe {
     async getSearchResult() {
         this.query.replace(" ", "+"); //The API needs multiple word search in the [word1]+[word2]+[word...] format
 
-        await axios.get(`https://api.spoonacular.com/recipes/complexSearch?=&number=${this.numberOfResults}&apiKey=${global.config.API_KEY}&addRecipeInformation=true&addRecipeNutrition=true&instructionsRequired=true&query=${this.query}`) 
-        .then ( response => {
-            this.response = response.data;
-        })
+        if(this.query == "random") {
+            await axios.get(`https://api.spoonacular.com/recipes/complexSearch?=&number=${this.numberOfResults}&apiKey=${global.config.API_KEY}&addRecipeInformation=true&addRecipeNutrition=true&instructionsRequired=true&sort=random`) 
+            .then ( response => {
+                this.response = response.data;
+            })
+        }
+        else {
+            await axios.get(`https://api.spoonacular.com/recipes/complexSearch?=&number=${this.numberOfResults}&apiKey=${global.config.API_KEY}&addRecipeInformation=true&addRecipeNutrition=true&instructionsRequired=true&query=${this.query}`) 
+            .then ( response => {
+                this.response = response.data;
+            })
+        }
     }
 
     async parse() {

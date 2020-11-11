@@ -62,46 +62,52 @@ export default class Search extends React.Component {
     render() {
         return (
             <div>
-                <nav className="navbar navbar-header" role="navigation" aria-label="main navigation">
+            <nav className="navbar navbar-header" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand logo">
                     <Link to="/"><a className="navbar-item is-size-3-desktop is-size-3-tablet is-size-4-mobile">CookAlong</a></Link>
                 </div>
                 <div className="navbar-menu">
                     <div className="navbar-start"></div>
                     <div className="navbar-end">
-                        <div className="navbar-item">
-                            <div className="control has-icons-left">
+                        <div className="navbar-item"> 
                             <form className="searchForm" onSubmit={this.searchSubmit()}>
-                                <div>
-                                    <input className="input input-search" type="text" placeholder="Search for recipes..."
-                                    onChange={this.handleSearchChange} value={this.state.toSerach}></input>
-                                    <Link to={{pathname: `${this.state.toSerach}`}}><Button className="home-button" color="light">Search</Button></Link>
+                                <div className="field has-addons">
+                                    <div className="control is-expanded has-icons-left">
+                                        <input className="input input-search" type="text" placeholder="Search for recipes..." onChange={this.handleSearchChange} value={this.state.toSerach}></input>
+                                        <span className="icon is-left">
+                                            <i className="fas fa-search"></i>
+                                        </span>   
+                                    </div>
+                                    <div className="control">
+                                            <Link to={{pathname: `${this.state.toSerach}`}}>
+                                                <button className="button" color="light">Search</button>
+                                            </Link>
+                                    </div> 
                                 </div>
                             </form>
-                            <span className="icon is-left">
-                                <i className="fas fa-search"></i>
-                            </span>
-                            </div>
                         </div>
                     </div>
                 </div>
             </nav>
-                <section className="columns search-page"  style={{paddingLeft: "5vw",paddingRight: "5vw"}}>
+                <section className="columns search-page"  style={{paddingLeft: "5vw",paddingRight: "5vw",display: "flex"}}>
                     <div className="column has-text-centered">
                         <div className="filter-bar">
                             <nav className="navbar filter-bar">
-                                <div className="navbar-brand">
+                                {/*<div className="navbar-brand">
                                     <a className="navbar-item" onClick={this.renderFilter}>Filter</a>
                                 </div>
                                 <div className="navbar-end">
                                     <p className="navbar-item"> {this.props.numFound} recipes found relating to: {this.props.match.params.recipe}</p>
-                                </div>
+                                </div> */}
                             </nav>
                         </div>
                         <div className="container">
                             {this.state.isRenderFilter ? <Filter/> : ''}
-                        </div>
-                        {<this.displaySearchResults />}
+                         </div>
+                        {/*Shows loading if the api call hasn't finished or if the api returned nothing*/
+                        this.state.loading || this.state.searchResults == null ? 
+                        <div>loading...</div> : 
+                        <this.displaySearchResults />}
                     </div>
                 </section>
                 <div class="box has-text-centered">
