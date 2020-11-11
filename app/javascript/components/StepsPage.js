@@ -70,6 +70,21 @@ export default class StepsPage extends React.Component {
 
         let utter = new SpeechSynthesisUtterance(this.directions[this.state.currentStep-1]);
         textToSpeech.speak(utter);
+<<<<<<< HEAD
+=======
+
+        var clickEvent = new MouseEvent('click', {
+            view: window,
+            bubbles: true,
+            cancelable: true
+          });
+
+        var element = document.getElementById('mic');
+        var cancelled = !element.dispatchEvent(clickEvent);
+    }
+
+    componentDidUpdate(){
+>>>>>>> 56c586b7d24e399af45d371c3ef01c9cc8a66dcb
         
         var clickEvent = new MouseEvent('click', {
             view: window,
@@ -114,7 +129,10 @@ export default class StepsPage extends React.Component {
                 this.leftButtonPressed()
             }
             else if (command.toLowerCase() === 'repeat'){
-                this.speak(this.directions[this.state.currentStep-1])
+                this.speak(this.directions[this.state.currentStep-1]);
+            }
+            else if (command.toLowerCase() === 'remaining'){
+                this.speak(this.numSteps-this.currentStep);
             }
             else {
                 this.speak("command not recognized, please try again");
@@ -137,10 +155,10 @@ export default class StepsPage extends React.Component {
     }
 
     speak(text){
-        textToSpeech.cancel()
         let utter = new SpeechSynthesisUtterance(text);
         utter.rate = 1.5;
         textToSpeech.speak(utter);
+        textToSpeech.cancel()
 
         // after step is said, wait 1 second and restart tts 
         setTimeout(() => {
