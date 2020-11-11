@@ -42,7 +42,9 @@ export class Header extends React.Component {
                                         </span>   
                                     </div>
                                     <div className="control">
-                                            <Link to={"/search/" + this.state.toSerach}><Button className="button home-button" color="light">Search</Button></Link>
+                                            <Link to={"/search/" + this.state.toSerach}>
+                                                <button className="button" color="light">Search</button>
+                                            </Link>
                                     </div> 
                                 </div>
                             </form>

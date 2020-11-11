@@ -69,18 +69,20 @@ export default class Search extends React.Component {
                 <div className="navbar-menu">
                     <div className="navbar-start"></div>
                     <div className="navbar-end">
-                        <div className="navbar-item">
-                            <form className="searchForm" onSubmit={location.reload}>
-                                <div className="field has-addons is-grouped">
-                                    <div className="control has-icons-left">
+                        <div className="navbar-item"> 
+                            <form className="searchForm" onSubmit={this.searchSubmit()}>
+                                <div className="field has-addons">
+                                    <div className="control is-expanded has-icons-left">
                                         <input className="input input-search" type="text" placeholder="Search for recipes..." onChange={this.handleSearchChange} value={this.state.toSerach}></input>
                                         <span className="icon is-left">
                                             <i className="fas fa-search"></i>
-                                        </span>
-                                        <div className="control">
-                                            <Link to={{pathname: `${this.state.toSerach}`}}><Button className="button home-button" color="light">Search</Button></Link>
-                                        </div>   
+                                        </span>   
                                     </div>
+                                    <div className="control">
+                                            <Link to={{pathname: `${this.state.toSerach}`}}>
+                                                <button className="button" color="light">Search</button>
+                                            </Link>
+                                    </div> 
                                 </div>
                             </form>
                         </div>

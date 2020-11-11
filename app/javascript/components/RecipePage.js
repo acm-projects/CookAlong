@@ -135,7 +135,7 @@ export default class RecipePage extends React.Component {
                                         <div class="column">
                                             <h6 class="is-size-6-desktop is-size-6-tablet is-size-7-mobile has-text-weight-normal us">UNITS: U.S.</h6>
                                         </div>
-                                    </div>
+                                    </div> 
                                 </div>
                                 <div class="column is-one-fifth">
                                     <div class="columns servings">
@@ -143,11 +143,11 @@ export default class RecipePage extends React.Component {
                                             <h6 class="is-size-6-desktop is-size-6-tablet is-size-7-mobile has-text-weight-normal servings-text">SERVINGS: {this.servings}</h6>
                                         </div>                                                                           
                                     </div>
-                                </div>
+                                </div>  
                             </div>
                             <div class="content is-size-5-desktop is-size-5-tablet is-size-6-mobile ingredients-list">
                                 <ul>
-                                    {listIngredients}
+                                    {listIngredients} 
                                 </ul>
                             </div>
                             <div class="directions">

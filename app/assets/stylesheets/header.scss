@@ -25,8 +25,13 @@ $montserrat: 'Montserrat', sans-serif;
 }
 
 .input-search {
-    //width: 90vw;
+    width: 30vw;
     width: 100%;
+    font-family: $montserrat;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.2);
+}
+
+.button {
     font-family: $montserrat;
     box-shadow: 1px 1px 1px rgba(0,0,0,.2);
 }

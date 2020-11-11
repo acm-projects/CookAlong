@@ -16,7 +16,7 @@ export default class TimerInput extends React.Component {
                 <div class="column is-two-fifths">
                     <button class="start-stop button" onClick={this.props.active ? this.props.pauseCountDown : this.props.startCountDown}>{this.props.active ? 'STOP' : 'START'}</button>
                     <button class="reset button" onClick={this.props.resetCountDown}>RESET</button>                     
-                </div>
+                </div>  
 </div>  */
             <div class="display-timer">
                 <div class="field is-grouped is-grouped-right time-input">
