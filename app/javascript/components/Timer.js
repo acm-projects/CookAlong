@@ -1,7 +1,6 @@
 import React, { Component, useState } from 'react';
 import ReactDOM from 'react-dom';
 import TimerInput from './TimerInput';
-//import "../../assets/stylesheets/timer.scss"; 
 import "../../assets/stylesheets/timer.scss";
   
 export default class Timer extends React.Component { 
@@ -22,15 +21,15 @@ export default class Timer extends React.Component { 
         this.handleChangeMinutes = this.handleChangeMinutes.bind(this);
         this.handleChangeSeconds = this.handleChangeSeconds.bind(this);
         this.pauseCountDown = this.pauseCountDown.bind(this);
-
-        // countdown functionality
-        this.secondsRemaining;
-        this.intervalHandle;
         this.startCountDown = this.startCountDown.bind(this);
         this.resetCountDown = this.resetCountDown.bind(this);
         this.tick = this.tick.bind(this);
         this.playAudio = this.playAudio.bind(this);
         this.pauseAudio = this.pauseAudio.bind(this);
+
+        // countdown functionality
+        this.secondsRemaining;
+        this.intervalHandle;
     }
 
     playAudio() {

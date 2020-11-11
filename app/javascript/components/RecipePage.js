@@ -123,13 +123,6 @@ export default class RecipePage extends React.Component {
                                 <div class="column is-three-fifths">
                                     <h2 class="subtitle is-size-3-desktop is-size-3-tablet is-size-4-mobile ingredients-title">Ingredients</h2>
                                 </div>
-                                {/*<div class="column is-one-fifth">
-                                    <div class="columns is-mobile units">
-                                        <div class="column is-one-third us">
-                                            <a class="is-size-6-desktop is-size-6-tablet is-size-7-mobile has-text-weight-normal" href="javascript:void(0)">Units: U.S.</a>
-                                        </div>
-                                    </div>
-                                </div>*/}
                                 <div class="column is-one-fifth">
                                     <div class="columns is-mobile units">
                                         <div class="column">
