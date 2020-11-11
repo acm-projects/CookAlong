@@ -1,9 +1,10 @@
 import React from "react";
+import Header from "./Header";   
 import {Link} from "react-router-dom";
-import Header from "./Header";
-import InstructionsQuery from "./InstructionQuery.js"
-import "../../assets/stylesheets/header.scss"
-/*  props:
+import InstructionsQuery from "./InstructionQuery.js";
+import Timer from "./Timer.js";                 
+    
+/*  props:  
         title: food name
         currStep: step number
         numSteps: total number of steps
@@ -60,7 +61,7 @@ export default class StepsPage extends React.Component {
     renderIngredients(){
         let ingredients = this.ingredients.map((ingredient) => {return <div className="box"><article className="media"><div className="media-content"><p><strong>{ingredient}</strong></p></div></article></div>});
         return ingredients;
-    }
+    } 
 
     rightButtonPressed() {
         if(this.state.currentStep < this.numSteps) {
@@ -79,7 +80,7 @@ export default class StepsPage extends React.Component {
         let utter = new SpeechSynthesisUtterance(text);
         utter.rate = 1.5;
         textToSpeech.speak(utter);
-    }
+    } 
 
     render() {
         return(
@@ -89,19 +90,21 @@ export default class StepsPage extends React.Component {
                 <div className="hero-body mx-0 my-0 px-0 py-0" >
                     <div className="container columns is-fluid is-centered mx-4 my-0 px-1 py-0">
                         <div className="steps-page columns is-gapless">
-                        <div className="steps-button">
-                        </div>
+                            <div className="steps-button"></div>
                             <div className="column is-half">
                                 <img className="step-image is-hidden-touch is-square" src={this.image}></img>
                                 <div className="ingredient-list is-hidden-touch columns is-multiline disable-scrollbars">{this.ingredients.map((ingredient) => {return <div className="box column is-four-fifths"><article className="media"><div className="media-content"><p><strong>{ingredient}</strong></p></div></article></div>})}</div>
-                            </div>
+                            </div> 
                             <div className="column is-half">
                                 <div className="right-column">
                                     <p className="step-food is-vcentered">{this.title}</p> <p style={{fontSize: "calc(1.4em + .05vw)",fontWeight:"normal"}}className="step-food">Time: {Math.floor(this.time/60) > 0 ? `${Math.floor(this.time/60)} hrs` : ''} {this.time % 60} mins | {this.calories} calories</p><hr style={{borderTop: "4px solid black"}}></hr>
                                     <p className="step-food has-text-centered">Step {this.state.currentStep}/{this.numSteps}</p>
                                     <p className="step-steps has-text-centered" style={{fontWeight: "normal"}}>{this.directions[this.state.currentStep-1]}</p>
                                 </div>
-                            </div>
+                            </div>    
+                        </div>
+                        <div class="timer-component">
+                            <Timer /> 
                         </div>
                         <div className="left-arrow">
                         <button class="button is-large is-rounded" onClick={this.leftButtonPressed}>
@@ -121,5 +124,6 @@ export default class StepsPage extends React.Component {
                 </div>
         </section>
         )
-    }
+    } 
 }
+         

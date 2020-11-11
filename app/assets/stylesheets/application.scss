@@ -1,6 +1,7 @@
 $card-content-padding: .5rem;
 
 @import 'bulma';
+@import "../../../node_modules/bulma/bulma.sass";
 @import url('//fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Open+Sans:wght@100&display=swap');
 
 $montserrat: 'Montserrat', sans-serif;
@@ -216,14 +217,13 @@ button {
 		bottom: 5%;
 	}
 }
-
 .ingredient-list {
 	z-index: 1000;
 	top: 5%;
 	margin-top: 5%;
 	padding-left: 8%;
 	overflow:auto;
-	max-height: 90%;
+	max-height: 72%;
 	width: 45%;
 	position: absolute;
 }
@@ -232,4 +232,13 @@ button {
 	object-fit: cover;
 	object-position: center center;
 	transform: scale(1.25);
+}
+
+.timer-component {
+	color: black;
+	font-family: $montserrat;
+	position: absolute;
+	z-index: 100;
+	left: 5%;
+	bottom: 3%;
 }

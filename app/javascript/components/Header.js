@@ -5,10 +5,10 @@ import { Button } from "react-bulma-components"
 
 export class Header extends React.Component {
     constructor(props) {
-        super(props);
+        super(props);   
         
         this.state = {toSerach: ''}
-        
+         
         this.formSubmitted = false;
 
         this.handleSearchChange = this.handleSearchChange.bind(this);
@@ -32,19 +32,22 @@ export class Header extends React.Component {
                 <div className="navbar-menu">
                     <div className="navbar-start"></div>
                     <div className="navbar-end">
-                        <div className="navbar-item">
-                            <div className="control has-icons-left">
+                        <div className="navbar-item"> 
                             <form className="searchForm" onSubmit={location.reload}>
-                                <div>
-                                    <input className="input input-search" type="text" placeholder="Search for recipes..."
-                                    onChange={this.handleSearchChange} value={this.state.toSerach}></input>
-                                    <Link to={"/search/" + this.state.toSerach}><Button className="home-button" color="light">Search</Button></Link>
+                                <div className="field has-addons">
+                                    <div className="control is-expanded has-icons-left">
+                                        <input className="input input-search" type="text" placeholder="Search for recipes..." onChange={this.handleSearchChange} value={this.state.toSerach}></input>
+                                        <span className="icon is-left">
+                                            <i className="fas fa-search"></i>
+                                        </span>   
+                                    </div>
+                                    <div className="control">
+                                        <Link to={"/search/" + this.state.toSerach}>
+                                            <button className="button" color="light">Search</button>
+                                        </Link>
+                                    </div> 
                                 </div>
                             </form>
-                            <span className="icon is-left">
-                                <i className="fas fa-search"></i>
-                            </span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -52,6 +55,5 @@ export class Header extends React.Component {
         )
     }
 }
-
 
 export default Header;

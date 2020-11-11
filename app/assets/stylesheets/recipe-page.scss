@@ -69,30 +69,7 @@ $open-sans: 'Open Sans', sans-serif;
 
 .us {
     color: black;
-    margin: 0.5vw;
-}
-
-.us a {
-    color: black;
-}
-
-.us a:focus {
-    color: #A76843;
-    font-weight: bold;
-}
-
-.metric {
-    padding-left: 0vw;
-    color: black;
-    margin: 0.5vw;
-}
-
-.metric a {
-    color: black;
-}
-
-.metric a:focus {
-    color: #A76843;
+    margin: 0.75vw;
 }
 
 .servings {
@@ -104,11 +81,7 @@ $open-sans: 'Open Sans', sans-serif;
 .servings-text {
     color: black;
     margin: 0.75vw;
-}
-
-.servings-input {
-    margin-left: 1vw;
-}
+}  
 
 .ingredients-list {
     color: black;
