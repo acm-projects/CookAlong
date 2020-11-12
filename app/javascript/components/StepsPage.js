@@ -130,7 +130,6 @@ export default class StepsPage extends React.Component {
                 bubbles: true,
                 cancelable: true
               });
-    
             var element = document.getElementById('mic');
             var cancelled = !element.dispatchEvent(clickEvent);
             
