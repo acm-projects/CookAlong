@@ -84,7 +84,7 @@ export default class RecipePage extends React.Component {
                                                     <span class="icon is-small clock">
                                                         <i class="far fa-clock"></i>
                                                     </span>
-                                                    <span class="is-size-4-desktop is-size-5-tablet is-size-6-mobile has-text-weight-normal recipe-time">{this.time}</span>
+                                                    <span class="is-size-4-desktop is-size-5-tablet is-size-6-mobile has-text-weight-normal recipe-time">{this.time} minutes</span>
                                                 </div>
                                             </div>
                                             <div class="overview-more-info">
@@ -125,32 +125,22 @@ export default class RecipePage extends React.Component {
                                 </div>
                                 <div class="column is-one-fifth">
                                     <div class="columns is-mobile units">
-                                        <div class="column is-one-third us">
-                                            <a class="is-size-6-desktop is-size-6-tablet is-size-7-mobile has-text-weight-normal" href="javascript:void(0)">US</a>
+                                        <div class="column">
+                                            <h6 class="is-size-6-desktop is-size-6-tablet is-size-7-mobile has-text-weight-normal us">UNITS: U.S.</h6>
                                         </div>
-                                        <div class="column is-two-thirds metric">
-                                            <a class="is-size-6-desktop is-size-6-tablet is-size-7-mobile has-text-weight-normal" href="javascript:void(0)">METRIC</a>
-                                        </div>
-                                    </div>
+                                    </div> 
                                 </div>
                                 <div class="column is-one-fifth">
                                     <div class="columns servings">
                                         <div class="column">
                                             <h6 class="is-size-6-desktop is-size-6-tablet is-size-7-mobile has-text-weight-normal servings-text">SERVINGS: {this.servings}</h6>
                                         </div>                                                                           
-                                        {/*<div class="column is-one-third servings-input">
-                                            <div class="field">
-                                                <div class="control"> 
-                                                    <input class="input is-size-7-desktop is-size-7-tablet is-size-7-mobile is-small" type="text" placeholder={servings}/>
-                                                </div>
-                                            </div>
-                                        </div>*/}
                                     </div>
-                                </div>
+                                </div>  
                             </div>
                             <div class="content is-size-5-desktop is-size-5-tablet is-size-6-mobile ingredients-list">
                                 <ul>
-                                    {listIngredients}
+                                    {listIngredients} 
                                 </ul>
                             </div>
                             <div class="directions">
