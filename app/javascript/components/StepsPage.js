@@ -102,7 +102,6 @@ export default class StepsPage extends React.Component {
             console.log(command)
             if(command.toLowerCase() === 'next'){
                 this.rightButtonPressed()
-                
             }
             else if (command.toLowerCase() === 'back'){
                 this.leftButtonPressed()
