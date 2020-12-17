@@ -1,89 +1,171 @@
-# CookAlong
-Master the art of cooking with your hands-free, digital sous chef who guides you through recipes by voice command.
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Thanks again! Now go create something AMAZING! :D
+***
+***
+***
+*** To avoid retyping too much info. Do a search and replace for the following:
+*** github_username, repo_name, twitter_handle, email, project_title, project_description
+-->
 
-## Minimum Viable Product (MVP)
-- Take a recipe either directly from the user or by scrapping one online
-- Read it back to the user one step at a time 
-- Start off with a checklist of ingredients and supplies needed like pans to make sure the user has everything they need before they begin
-- Read each step and wait for the user’s voice commands before continuing
-- Set timers for any steps that include time information 
-- [Some common commands to implement](https://support.google.com/googlenest/answer/7309433?hl=en)
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/github_username/repo_name">
+    <img src="app/assets/images/CookAlongLogo.png" alt="Logo" width="80" height="80">
+  </a>
 
-## Stretch Goals
-- Add user accounts so user's can save their recipes and any edits
-- Convert recipes to account for more or less portions
-- Add ability to scan recipes through Optical Character Recognition (OCR) so the user doesn’t have to manually input family / hardcopy recipes
-- Add cute images / art for each ingredient to make cards for the user to click or swipe past to ensure the user isn’t forgetting an item
-- Add extra tutorial gifs / videos / links on more complicated or skill based steps to help new cooks (user can toggle these on or off based on skill level)
-  - Ex. how to dice an onion, how to safely flambe a dish, how to debone a fish, etc
+  <h3 align="center">CookAlong</h3>
+
+  <p align="center">
+    Master the art of cooking with your hands-free, digital sous chef who guides you through recipes by voice command.
+    <br />
+    <br />
+    <a href="https://github.com/github_username/repo_name">View Demo</a>
+  </p>
+</p>
 
 
-## Resources
-### General Software
-- [Git Bash for Windows](https://gitforwindows.org)
-  - For command line Git on Windows
-- Any text editor can be used eg. [Visual Studio Code](https://code.visualstudio.com/)
-- [Figma](https://www.figma.com/)
-    - Free UX design tool that is completely web-based
-- [Adobe XD](https://www.adobe.com/products/xd.html)
-    - More sophisticated UX tool, you can have one project for free
 
-### Tech Stack
-- [Ruby on Rails](https://guides.rubyonrails.org/) 
-  - Framework for web development
-  - Uses [Ruby](https://www.ruby-lang.org/en/) for its language
-    - [A 30 min interactive tutorial/walkthrough of Ruby](https://try.ruby-lang.org/)
-    - [A 1.5 hour beginner course to Rails](https://www.pluralsight.com/courses/code-school-rails-for-zombies)
-    - [Other tutorials if you want to learn more!](https://www.fullstackacademy.com/blog/learn-ruby-on-rails-for-free-with-these-6-websites)
-- [PostgreSQL](https://www.postgresql.org/)
-  - Free, open source, object-relational database
-- [Recipe APIs](https://rapidapi.com/blog/recipe-apis/) for both searching or scraping recipes
-- Google Cloud Speech Services
-  - [Speech to Text](https://cloud.google.com/speech-to-text/)
-    - [Ruby API Client library for the Cloud Speech-to-Text API](https://github.com/googleapis/google-cloud-ruby/tree/master/google-cloud-speech)
-  - [Text to Speech](https://cloud.google.com/text-to-speech/)
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
-### [Getting Started](https://docs.google.com/document/d/1197JNFaopJMXiP0vzkoyVo8SGoiRdAdkvnnxDlJdD74/edit?usp=sharing)
-Here's hopefully a helpful guide to setting up everything on your computer. It is mostly geared towards a Windows user, but I think it should also include macOS options.
 
-### Suggestions
-- [AngularJS](https://angularjs.org/) vs [ReactJS](https://reactjs.org/) vs [Bootstrap](https://getbootstrap.com/)
-  - Frontend frameworks for web development
-  - If we go by google search results, React is the most popular to pair with RoR out of the 3 options. However, all of them are pretty widely used. 
 
-### Learning Resources
-Look through all of these resources at the beginning of the semester!
-- [How to be successful in ACM Projects](https://docs.google.com/document/d/18Zi3DrKG5e6g5Bojr8iqxIu6VIGl86YBSFlsnJnlM88/edit?usp=sharing)
--	[Overview of making API calls](https://snipcart.com/blog/apis-integration-usage-benefits)
-- [Professor Cole's How to Program (and the "yellow pad" technique)](https://personal.utdallas.edu/~jxc064000/HowToProgram.html)
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-### [Common GitHub Commands](https://education.github.com/git-cheat-sheet-education.pdf)
-[GitHub Cheatsheet PDF](https://www.atlassian.com/dam/jcr:8132028b-024f-4b6b-953e-e68fcce0c5fa/atlassian-git-cheatsheet.pdf)
+Here's a blank template to get started:
+**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
+`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
 
-Login:
 
-| Command | Description |
-| ------ | ------ |
-| git config --global user.name "username" |  |
-| git config --global user.email "email" |  |
-| git config user.name | Checks that you're in, in case you’re unsure |
+### Built With
 
-First Time Setup:
+* [ReactJS](https://reactjs.org/)
+* [Bulma](https://bulma.io/)
+* [Ruby On Rails](https://rubyonrails.org/)
 
-| Command | Description |
-| ------ | ------ |
-| git clone | Creates local copy of remote repo. Try to not do this again unless you blew up your computer |
 
-General Use
 
-| Command | Description |
-| ------ | ------ |
-| cd "CookAlong" | Change directories over to our repository |
-| git branch | Lists branches for you |
-| git branch "branch name" | Makes new branch |
-| git checkout "branch name" | Switch to branch |
-| git checkout -b "branch name" | Same as 2 previous commands together |
-| git add . | Finds all changed files |
-| git commit -m "Testing123" | Commit with message |
-| git push origin "branch" | Push to branch |
-| git pull origin "branch" | Pull updates from a specific branch |
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/github_username/repo_name.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+
+_For more examples, please refer to the [Documentation](https://example.com)_
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+
+Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+* []()
+* []()
+* []()
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
+[contributors-url]: https://github.com/github_username/repo/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
+[forks-url]: https://github.com/github_username/repo/network/members
+[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=for-the-badge
+[stars-url]: https://github.com/github_username/repo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=for-the-badge
+[issues-url]: https://github.com/github_username/repo/issues
+[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=for-the-badge
+[license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/github_username
