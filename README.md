@@ -47,9 +47,9 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <!-- <li><a href="#roadmap">Roadmap</a></li> -->
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
+    <!-- <li><a href="#license">License</a></li> -->
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
@@ -60,9 +60,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
 
 
 ### Built With
@@ -70,6 +67,8 @@ Here's a blank template to get started:
 * [ReactJS](https://reactjs.org/)
 * [Bulma](https://bulma.io/)
 * [Ruby On Rails](https://rubyonrails.org/)
+* [Spoonacular API](https://spoonacular.com/food-api/)
+* [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
 
 
 
@@ -90,7 +89,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/acm-projects/CookAlong
    ```
 2. Install NPM packages
    ```sh
@@ -109,9 +108,9 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 <!-- ROADMAP -->
-## Roadmap
+<!-- ## Roadmap -->
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
+<!-- See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues). -->
 
 
 
@@ -129,27 +128,35 @@ Contributions are what make the open source community such an amazing place to b
 
 
 <!-- LICENSE -->
-## License
+<!-- ## License -->
 
-Distributed under the MIT License. See `LICENSE` for more information.
+<!-- Distributed under the MIT License. See `LICENSE` for more information. -->
 
 
 
 <!-- CONTACT -->
 ## Contact
+Project Manager:
+* Emily Lam - [LinkedIn](https://www.linkedin.com/in/ejlam/) -
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+Industry Mentor:
+* Alex Dometrius - [LinkedIn](https://www.linkedin.com/in/alexdometrius/) -
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Participants:
+* Patrick Drury - [LinkedIn](https://www.linkedin.com/in/patrick-drury/) - 
+* Ryan Dimaranan - [LinkedIn](https://www.linkedin.com/in/ryan-dimaranan/) - rtd180003@utdallas.edu
+* Hannah Valena - [LinkedIn](https://www.linkedin.com/in/hannah-valena/) - 
+* Nam Truong - [LinkedIn](https://www.linkedin.com/in/namtruongcs) - 
+
+
+Project Link: [https://github.com/acm-projects/CookAlong](https://github.com/acm-projects/CookAlong)
 
 
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* []()
-* []()
-* []()
+* [ACM UTD](https://www.acmutd.co/)
 
 
 
