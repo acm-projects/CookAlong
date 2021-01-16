@@ -74,8 +74,8 @@
 * Search and choose a recipe
 * Randomize search results
 * Preview a recipe before beginning
-* Read out each step of a recipe to a user
-* Respond to user's voice commands of "next", "previous", or "repeat"
+* Read out each step of a recipe
+* Respond to the voice commands "next", "previous", and "repeat"
 
 <!-- GETTING STARTED -->
 ## Getting Started
