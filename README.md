@@ -23,7 +23,7 @@
     Master the art of cooking with your hands-free, digital sous chef who guides you through recipes by voice command.
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://youtu.be/INW_0wNyoPo?t=5723">View Demo and Presentation</a>
   </p>
 </p>
 
@@ -37,6 +37,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#features">Features</a></li>
       </ul>
     </li>
     <li>
@@ -60,8 +61,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-
-
 ### Built With
 
 * [ReactJS](https://reactjs.org/)
@@ -70,7 +69,13 @@
 * [Spoonacular API](https://spoonacular.com/food-api/)
 * [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
 
+### Features
 
+* Search and choose a recipe
+* Randomize search results
+* Preview a recipe before beginning
+* Read out each step of a recipe to a user
+* Respond to user's voice commands of "next", "previous", or "repeat"
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -96,12 +101,12 @@ This is an example of how to list things you need to use the software and how to
    npm install
    ```
 
-
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+
+
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
@@ -145,7 +150,7 @@ Industry Mentor:
 Participants:
 * Patrick Drury - [LinkedIn](https://www.linkedin.com/in/patrick-drury/) - 
 * Ryan Dimaranan - [LinkedIn](https://www.linkedin.com/in/ryan-dimaranan/) - rtd180003@utdallas.edu
-* Hannah Valena - [LinkedIn](https://www.linkedin.com/in/hannah-valena/) - 
+* Hannah Valena - [LinkedIn](https://www.linkedin.com/in/hannah-valena/) - hannah.valena@utdallas.edu
 * Nam Truong - [LinkedIn](https://www.linkedin.com/in/namtruongcs) - 
 
 
